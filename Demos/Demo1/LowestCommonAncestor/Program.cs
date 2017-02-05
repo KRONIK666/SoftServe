@@ -33,10 +33,16 @@ namespace LowestCommonAncestor
             tree.PrintDFS();
 
             // Picking two nodes from the console to find their lowest common ancestor.
+            // Currently hardcored!!!
 
             Console.WriteLine();
-            Console.WriteLine("Pick the first node to compare: ");
-            Console.WriteLine("Pick the second node to compare: ");
+            Console.Write("Pick the first node to compare: ");
+            string firstNode = Console.ReadLine();
+            Console.Write("Pick the second node to compare: ");
+            string secondNode = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode, secondNode, "Big Boss");
+            Console.WriteLine();
         }
     }
 }
