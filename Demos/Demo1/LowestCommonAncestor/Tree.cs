@@ -35,7 +35,7 @@ namespace LowestCommonAncestor
             }
         }
 
-        // A method that traverses and prints the tree with the Depth-First-Search (DFS) algorithm.
+        // Two methods that traverse and print the tree with the Depth-First-Search (DFS) algorithm.
 
         private void PrintDFS(TreeNode<T> root, string spaces)
         {
@@ -48,8 +48,6 @@ namespace LowestCommonAncestor
                 PrintDFS(child, spaces + "   ");
             }
         }
-
-        // A method that traverses and prints the tree with the Depth-First-Search (DFS) algorithm.
 
         public void PrintDFS()
         {
