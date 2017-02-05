@@ -34,16 +34,16 @@ namespace LowestCommonAncestor
 
             // Picking two nodes from the tree in the console to find their lowest common ancestor.
 
+            string commonAncestor = null;
+
             Console.WriteLine();
             Console.Write("Pick the first node to compare: ");
-            Tree<string> firstNode = new Tree<string>(Console.ReadLine());
+            string firstNode = Console.ReadLine();
             Console.Write("Pick the second node to compare: ");
-            Tree<string> secondNode = new Tree<string>(Console.ReadLine());
+            string secondNode = Console.ReadLine();
             Console.WriteLine();
 
             // Instantiate an object from the class Ancestor.
-
-            Tree<string> commonAncestor = null;
 
             Ancestor ancestor = new Ancestor(firstNode, secondNode, commonAncestor);
             ancestor.FirstNode = firstNode;

@@ -6,45 +6,51 @@ using System.Threading.Tasks;
 
 namespace LowestCommonAncestor
 {
+    // This class contains the algorithm for finding the lowest common ancestor.
+
     public class Ancestor
     {
-        private Tree<string> firstNode;
-        private Tree<string> secondNode;
-        private Tree<string> commonAncestor;
+        private string firstNode;
+        private string secondNode;
+        private string commonAncestor;
 
-        public Tree<string> FirstNode
+        public string FirstNode
         {
             get { return firstNode; }
             set { firstNode = value; }
         }
 
-        public Tree<string> SecondNode
+        public string SecondNode
         {
             get { return secondNode; }
             set { secondNode = value; }
         }
 
-        public Tree<string> CommonAncestor
+        public string CommonAncestor
         {
             get { return commonAncestor; }
             set { commonAncestor = value; }
         }
 
-        public Ancestor(Tree<string> firstNode, Tree<string> secondNode, Tree<string> commonAncestor)
+        public Ancestor(string firstNode, string secondNode, string commonAncestor)
         {
             this.firstNode = firstNode;
             this.secondNode = secondNode;
             this.commonAncestor = commonAncestor;
         }
 
-        public Tree<string> FindLowestCommonAncestor(Tree<string> firstNode, Tree<string> secondNode, Tree<string> commonAncestor)
+        // The method where the lowest common ancestor algorithm is realized.
+
+        public string FindLowestCommonAncestor(string firstNode, string secondNode, string commonAncestor)
         {
             firstNode = this.firstNode;
             secondNode = this.secondNode;
+            commonAncestor = this.commonAncestor;
 
             if (firstNode == secondNode)
             {
-                return firstNode;
+                commonAncestor = firstNode;
+                return commonAncestor;
             }
             else
             {
