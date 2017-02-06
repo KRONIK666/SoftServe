@@ -32,30 +32,27 @@ namespace LowestCommonAncestor
             Console.WriteLine();
             tree.PrintDFS();
 
-            // Picking two nodes from the tree in the console to find their lowest common ancestor.
-
-            string commonAncestor = null;
+            // Picking two nodes from the tree as an input into the console.
 
             Console.WriteLine();
             Console.Write("Pick the first node to compare: ");
-            string firstNode = Console.ReadLine();
+            TreeNode<string> firstNode = new TreeNode<string>("Boss1");
             Console.Write("Pick the second node to compare: ");
-            string secondNode = Console.ReadLine();
+            TreeNode<string> secondNode = new TreeNode<string>("Boss2");
+            TreeNode<string> parent = null;
             Console.WriteLine();
 
-            // Instantiate an object from the class Ancestor.
+            // Instantiate an object from the class TreeNode<T>.
 
-            Ancestor ancestor = new Ancestor(firstNode, secondNode, commonAncestor);
+            TreeNode<string> ancestor = new TreeNode<string>(parent, firstNode, secondNode);
+            ancestor.Parent = parent;
             ancestor.FirstNode = firstNode;
             ancestor.SecondNode = secondNode;
-            ancestor.CommonAncestor = commonAncestor;
 
-            // Calling the method that finds the lowest common ancestor and printing the output in the console.
+            // Calling the methods that find the lowest common ancestor and print the output in the console.
 
-            ancestor.FindLowestCommonAncestor(ancestor.FirstNode, ancestor.SecondNode, ancestor.CommonAncestor);
-
-            Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", ancestor.FirstNode, ancestor.SecondNode, ancestor.CommonAncestor);
-            Console.WriteLine();
+            ancestor.FindLowestCommonAncestor(ancestor.Parent, ancestor.FirstNode, ancestor.SecondNode);
+            ancestor.PrintLowestCommonAncestor();
         }
     }
 }
