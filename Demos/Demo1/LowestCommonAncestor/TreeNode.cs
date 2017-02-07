@@ -11,7 +11,7 @@ namespace LowestCommonAncestor
     public class TreeNode<T>
     {
         private T value;
-        private TreeNode<T> parent;
+        private TreeNode<T> ancestor;
         private TreeNode<T> firstNode;
         private TreeNode<T> secondNode;
         private List<TreeNode<T>> children;
@@ -22,10 +22,10 @@ namespace LowestCommonAncestor
             set { this.value = value; }
         }
 
-        public TreeNode<T> Parent
+        public TreeNode<T> Ancestor
         {
-            get { return parent; }
-            set { parent = value; }
+            get { return ancestor; }
+            set { ancestor = value; }
         }
 
         public TreeNode<T> FirstNode
@@ -45,7 +45,7 @@ namespace LowestCommonAncestor
             get { return this.children.Count; }
         }
 
-        // A constructor that creates a tree node.
+        // A constructor that keeps the children of a tree node.
 
         public TreeNode(T value)
         {
@@ -53,11 +53,10 @@ namespace LowestCommonAncestor
             this.children = new List<TreeNode<T>>();
         }
 
-        // A constructor that is called for the comparing of two nodes.
+        // A constructor that is used to create an object of the class.
 
-        public TreeNode(TreeNode<T> parent, TreeNode<T> firstNode, TreeNode<T> secondNode)
+        public TreeNode(TreeNode<T> firstNode, TreeNode<T> secondNode)
         {
-            this.parent = parent;
             this.firstNode = firstNode;
             this.secondNode = secondNode;
         }
@@ -77,37 +76,32 @@ namespace LowestCommonAncestor
         }
 
         // The method where the lowest common ancestor algorithm is realized.
+        // The method also prints the result as an output.
 
-        public TreeNode<T> FindLowestCommonAncestor(TreeNode<T> parent, TreeNode<T> firstNode, TreeNode<T> secondNode)
+        public void PrintLowestCommonAncestor(TreeNode<T> firstNode, TreeNode<T> secondNode)
         {
-            if (parent == null)
+            List<TreeNode<T>> nodes = new List<TreeNode<T>>();
+            Queue<TreeNode<T>> visitedNode = new Queue<TreeNode<T>>();
+
+            visitedNode.Enqueue(new TreeNode<T>(firstNode.Value));
+
+            while (visitedNode.Count > 0)
             {
-                return null;
+                TreeNode<T> currentNode = visitedNode.Dequeue();
+                nodes.Add(currentNode);
+
+                foreach (TreeNode<T> child in nodes)
+                {
+                    visitedNode.Enqueue(child);
+                }
             }
-            if (parent == firstNode || parent == secondNode)
+
+            if (nodes.Contains(secondNode))
             {
-                return parent;
+                ancestor = firstNode;
             }
 
-            TreeNode<T> leftPath = FindLowestCommonAncestor(parent, firstNode, secondNode);
-            TreeNode<T> rightPath = FindLowestCommonAncestor(parent, firstNode, secondNode);
-
-            if ((leftPath == firstNode && rightPath == secondNode) || (leftPath == secondNode && rightPath == secondNode))
-            {
-                return parent;
-            }
-            return (leftPath != null) ? leftPath : rightPath;
-        }
-
-        private void PrintLowestCommonAncestor(TreeNode<T> parent, TreeNode<T> firstNode, TreeNode<T> secondNode)
-        {
-            Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode, secondNode, parent);
-            Console.WriteLine();
-        }
-
-        public void PrintLowestCommonAncestor()
-        {
-            this.PrintLowestCommonAncestor(this.parent, this.firstNode, this.secondNode);
+            Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode.Value, secondNode.Value, ancestor.Value);
         }
     }
 }

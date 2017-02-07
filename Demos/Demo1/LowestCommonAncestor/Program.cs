@@ -16,15 +16,15 @@ namespace LowestCommonAncestor
         {
             Tree<string> tree =
                 new Tree<string>("Big Boss",
-                    new Tree<string>("Boss1",
-                        new Tree<string>("Manager1",
-                            new Tree<string>("Developer1")),
-                        new Tree<string>("Manager2")),
-                    new Tree<string>("Boss2",
-                        new Tree<string>("Manager3",
-                            new Tree<string>("Developer2"),
-                            new Tree<string>("Developer3")),
-                        new Tree<string>("Manager4")));
+                    new Tree<string>("Boss 1",
+                        new Tree<string>("Manager 1",
+                            new Tree<string>("Developer 1")),
+                        new Tree<string>("Manager 2")),
+                    new Tree<string>("Boss 2",
+                        new Tree<string>("Manager 3",
+                            new Tree<string>("Developer 2"),
+                            new Tree<string>("Developer 3")),
+                        new Tree<string>("Manager 4")));
 
             // Printing the structure of the tree.
 
@@ -32,27 +32,23 @@ namespace LowestCommonAncestor
             Console.WriteLine();
             tree.PrintDFS();
 
-            // Picking two nodes from the tree as an input into the console.
+            // Picking two nodes from the tree as an input.
 
             Console.WriteLine();
             Console.Write("Pick the first node to compare: ");
-            TreeNode<string> firstNode = new TreeNode<string>("Boss1");
+            TreeNode<string> firstNode = new TreeNode<string>(Console.ReadLine());
             Console.Write("Pick the second node to compare: ");
-            TreeNode<string> secondNode = new TreeNode<string>("Boss2");
-            TreeNode<string> parent = null;
+            TreeNode<string> secondNode = new TreeNode<string>(Console.ReadLine());
             Console.WriteLine();
 
             // Instantiate an object from the class TreeNode<T>.
 
-            TreeNode<string> ancestor = new TreeNode<string>(parent, firstNode, secondNode);
-            ancestor.Parent = parent;
-            ancestor.FirstNode = firstNode;
-            ancestor.SecondNode = secondNode;
+            TreeNode<string> ancestor = new TreeNode<string>(firstNode, secondNode);
 
-            // Calling the methods that find the lowest common ancestor and print the output in the console.
+            // Calling the method that finds the lowest common ancestor and prints the output.
 
-            ancestor.FindLowestCommonAncestor(ancestor.Parent, ancestor.FirstNode, ancestor.SecondNode);
-            ancestor.PrintLowestCommonAncestor();
+            ancestor.PrintLowestCommonAncestor(firstNode, secondNode);
+            Console.WriteLine();
         }
     }
 }

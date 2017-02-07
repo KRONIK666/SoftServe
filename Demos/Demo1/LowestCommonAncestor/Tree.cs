@@ -17,14 +17,14 @@ namespace LowestCommonAncestor
             get { return this.root; }
         }
 
-        // A constructor for creating a tree.
+        // A constructor where nodes get a value.
 
         public Tree(T value)
         {
             this.root = new TreeNode<T>(value);
         }
 
-        // Another constructor for creating a tree.
+        // A constructor for adding a child to a node.
 
         public Tree(T value, params Tree<T>[] children)
             : this(value)
@@ -35,7 +35,7 @@ namespace LowestCommonAncestor
             }
         }
 
-        // Two methods that traverse and print the tree with the Depth-First-Search (DFS) algorithm.
+        // A method that traverses and prints the tree structure with the Depth-First-Search algorithm.
 
         private void PrintDFS(TreeNode<T> root, string spaces)
         {
@@ -48,6 +48,8 @@ namespace LowestCommonAncestor
                 PrintDFS(child, spaces + "   ");
             }
         }
+
+        // This method invokes the private PrintDFS() method.
 
         public void PrintDFS()
         {
