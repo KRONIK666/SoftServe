@@ -36,8 +36,8 @@ namespace LowestCommonAncestor
             BinaryTreeNode<string> firstNode = new BinaryTreeNode<string>(Console.ReadLine());
             Console.Write("Pick the second node to compare: ");
             BinaryTreeNode<string> secondNode = new BinaryTreeNode<string>(Console.ReadLine());
-            firstNode = binaryTree.TraverseFirstNode();
-            secondNode = binaryTree.TraverseSecondNode();
+            firstNode = binaryTree.TraverseFirstNode(firstNode);
+            secondNode = binaryTree.TraverseSecondNode(secondNode);
             Console.WriteLine();
 
             // Instantiate an object from the class TreeNode<T>.
