@@ -59,7 +59,7 @@ namespace LowestCommonAncestor
                 return;
             }
 
-            Console.Write(root.Value + Environment.NewLine);
+            Console.WriteLine(root.Value);
             PrintPreorder(root.LeftChild);
             PrintPreorder(root.RightChild);
         }
@@ -87,9 +87,9 @@ namespace LowestCommonAncestor
             } return root;
         }
 
-        public void TraverseFirstNode()
+        public BinaryTreeNode<T> TraverseFirstNode()
         {
-            TraverseFirstNode(this.root, this.firstNode);
+            return TraverseFirstNode(this.root, this.firstNode);
         }
 
         public BinaryTreeNode<T> TraverseSecondNode(BinaryTreeNode<T> root, BinaryTreeNode<T> secondNode)
@@ -110,9 +110,9 @@ namespace LowestCommonAncestor
             } return root;
         }
 
-        public void TraverseSecondNode()
+        public BinaryTreeNode<T> TraverseSecondNode()
         {
-            TraverseSecondNode(this.root, this.secondNode);
+            return TraverseSecondNode(this.root, this.secondNode);
         }
 
         // The method where the lowest common ancestor algorithm is realized.

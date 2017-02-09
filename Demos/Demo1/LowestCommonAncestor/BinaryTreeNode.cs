@@ -17,29 +17,13 @@
         public BinaryTreeNode<T> LeftChild
         {
             get { return this.leftChild; }
-            set
-            {
-                if (value == null)
-                {
-                    return;
-                }
-
-                this.leftChild = value;
-            }
+            set { this.leftChild = value; }
         }
 
         public BinaryTreeNode<T> RightChild
         {
             get { return this.rightChild; }
-            set
-            {
-                if (value == null)
-                {
-                    return;
-                }
-
-                this.rightChild = value;
-            }
+            set { this.rightChild = value; }
         }
 
         // A constructor that keeps the children of a tree node.
