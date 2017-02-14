@@ -1,35 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LowestCommonAncestor
 {
-    // This class represents a tree data structure.
+    // This class represents a binary tree structure.
 
     public class BinaryTree<T>
     {
         private BinaryTreeNode<T> root;
-        private BinaryTreeNode<T> firstNode;
-        private BinaryTreeNode<T> secondNode;
 
         public BinaryTreeNode<T> Root
         {
             get { return this.root; }
         }
 
-        public BinaryTreeNode<T> FirstNode
+        // A constructor used to initialise a Binary Tree.
+
+        public BinaryTree()
         {
-            get { return firstNode; }
-            set { firstNode = value; }
+
         }
 
-        public BinaryTreeNode<T> SecondNode
-        {
-            get { return secondNode; }
-            set { secondNode = value; }
-        }
-
-        // A constructor where nodes get a value.
-        // A constructor for adding a child to a node.
-        // A constructor that is used to create an object of the class.
+        // Constructors that construct the binary tree.
 
         public BinaryTree(T value, BinaryTree<T> leftChild, BinaryTree<T> rightChild)
         {
@@ -44,81 +36,89 @@ namespace LowestCommonAncestor
 
         }
 
-        public BinaryTree(BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
+        // With this method the user inputs random nodes to fill the binary tree structure.
+
+        public void InputNodes(string[] nodes)
         {
-            this.firstNode = firstNode;
-            this.secondNode = secondNode;
+            string value;
+            List<string> tempNodes = new List<string>();
+
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                Console.Write("Enter node {0}: ", i + 1);
+                value = Console.ReadLine();
+
+                if (tempNodes.Contains(value))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("There is another node with the same value!");
+                    Console.WriteLine();
+                    i--;
+                }
+                else
+                {
+                    nodes[i] = value;
+                    tempNodes.Add(value);
+                }
+            }
         }
 
-        // A method that traverses and prints the tree structure with the Depth-First-Search algorithm.
+        // Methods that traverse and print the binary tree with the Preorder algorithm.
 
-        private void PrintPreorder(BinaryTreeNode<T> root)
+        private void printPreorder(BinaryTreeNode<T> root, int interval)
         {
             if (root == null)
             {
                 return;
             }
 
+            Console.Write(new string(' ', 2 * interval));
             Console.WriteLine(root.Value);
-            PrintPreorder(root.LeftChild);
-            PrintPreorder(root.RightChild);
+
+            printPreorder(root.LeftChild, interval + 1);
+            printPreorder(root.RightChild, interval + 1);
         }
 
         public void PrintPreorder()
         {
-            PrintPreorder(this.root);
+            int interval = 0;
+            printPreorder(this.root, interval);
         }
 
-        public BinaryTreeNode<T> TraverseFirstNode(BinaryTreeNode<T> root, BinaryTreeNode<T> firstNode)
+        // This method traverses the binary tree and finds the node given by the user.
+
+        public BinaryTreeNode<T> SearchNode(BinaryTreeNode<T> root, BinaryTreeNode<T> inputNode)
         {
             if (root == null)
             {
                 return null;
             }
-            else if (object.Equals(root.Value, firstNode.Value))
+            else if (object.Equals(root.Value, inputNode.Value))
             {
-                firstNode = root;
-                return firstNode;
+                inputNode = root;
+                return inputNode;
             }
             else
             {
-                TraverseFirstNode(root.LeftChild, firstNode);
-                TraverseFirstNode(root.RightChild, firstNode);
-            }
-            return root;
-        }
+                BinaryTreeNode<T> left = SearchNode(root.LeftChild, inputNode);
 
-        public BinaryTreeNode<T> TraverseFirstNode(BinaryTreeNode<T> firstNode)
-        {
-            return TraverseFirstNode(this.root, firstNode);
-        }
+                if (left != null)
+                {
+                    return left;
+                }
 
-        public BinaryTreeNode<T> TraverseSecondNode(BinaryTreeNode<T> root, BinaryTreeNode<T> secondNode)
-        {
-            if (root == null)
-            {
+                BinaryTreeNode<T> right = SearchNode(root.RightChild, inputNode);
+
+                if (right != null)
+                {
+                    return right;
+                }
+
                 return null;
             }
-            else if (object.Equals(root.Value, secondNode.Value))
-            {
-                secondNode = root;
-                return secondNode;
-            }
-            else
-            {
-                TraverseSecondNode(root.LeftChild, secondNode);
-                TraverseSecondNode(root.RightChild, secondNode);
-            }
-            return root;
-        }
-
-        public BinaryTreeNode<T> TraverseSecondNode(BinaryTreeNode<T> secondNode)
-        {
-            return TraverseSecondNode(this.root, secondNode);
         }
 
         // The method where the lowest common ancestor algorithm is realized.
-        // The method also prints the result as an output.
 
         public BinaryTreeNode<T> FindLowestCommonAncestor(BinaryTreeNode<T> root, BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
         {
@@ -150,10 +150,34 @@ namespace LowestCommonAncestor
             }
         }
 
-        public void PrintLowestCommonAncestor(BinaryTreeNode<T> root, BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
+        // This method prints as an output the result if a lowest common ancestor is found.
+
+        public void PrintLowestCommonAncestor(BinaryTreeNode<T> ancestor, BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
         {
-            BinaryTreeNode<T> ancestor = FindLowestCommonAncestor(root, firstNode, secondNode);
-            Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode.Value, secondNode.Value, ancestor.Value);
+            Console.WriteLine();
+
+            // If the user inputs a node that cannot be found in the binary tree the method will catch a null reference exception.
+            // If a null reference exception is cought the program will continue running without crashing when it tries to print a null.
+
+            try
+            {
+                Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode.Value, secondNode.Value, ancestor.Value);
+            }
+            catch (NullReferenceException)
+            {
+                if (firstNode == null && secondNode == null)
+                {
+                    Console.WriteLine("Both nodes were not found in the Binary Tree!");
+                }
+                else if (firstNode == null)
+                {
+                    Console.WriteLine("The first node was not found in the Binary Tree!");
+                }
+                else if (secondNode == null)
+                {
+                    Console.WriteLine("The second node was not found in the Binary Tree!");
+                }
+            }
         }
     }
 }

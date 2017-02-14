@@ -2,51 +2,86 @@
 
 namespace LowestCommonAncestor
 {
-    // Program creates a sample binary tree with example values.
-    // This program finds the lowest common ancestor of two nodes.
+    // This Program creates a sample binary tree.
+    // This Program finds the lowest common ancestor of two nodes.
 
     public static class Program
     {
         static void Main()
         {
-            BinaryTree<string> binaryTree =
-                new BinaryTree<string>("Big Boss",
-                    new BinaryTree<string>("Boss 1",
-                        new BinaryTree<string>("Manager 1",
-                            new BinaryTree<string>("Developer 1"),
-                            null),
-                        new BinaryTree<string>("Manager 2")),
-                    new BinaryTree<string>("Boss 2",
-                        new BinaryTree<string>("Manager 3",
-                            new BinaryTree<string>("Developer 2"),
-                            new BinaryTree<string>("Developer 3")),
-                        new BinaryTree<string>("Manager 4")));
+            // Initialising a Binary Tree.
+            // Initialising an object that will represent the ancestor.
 
-            // Printing the structure of the tree.
+            BinaryTree<string> binaryTree = new BinaryTree<string>();
+            BinaryTreeNode<string> ancestor = new BinaryTreeNode<string>();
 
-            Console.WriteLine("Structure of the tree:");
+            Console.WriteLine("Input the nodes of the Binary Tree!");
+            Console.WriteLine();
+
+            // Calling the method that fills the binary tree.
+
+            string[] node = new string[11];
+
+            binaryTree.InputNodes(node);
+            Console.WriteLine();
+
+            // Creating a predefined structure of a binary tree.
+
+            binaryTree =
+                new BinaryTree<string>(node[0],
+                    new BinaryTree<string>(node[1],
+                        new BinaryTree<string>(node[3],
+                            new BinaryTree<string>(node[7]),
+                            new BinaryTree<string>(node[8])),
+                        new BinaryTree<string>(node[4])),
+                    new BinaryTree<string>(node[2],
+                        new BinaryTree<string>(node[5],
+                            new BinaryTree<string>(node[9]),
+                            new BinaryTree<string>(node[10])),
+                        new BinaryTree<string>(node[6])));
+
+            // Printing the structure of the binary tree.
+
+            Console.WriteLine("Structure of the binary tree:");
+
             Console.WriteLine();
             binaryTree.PrintPreorder();
 
-            // Picking two nodes from the tree as an input.
+            // Initialising the two nodes that will be compared.
 
-            Console.WriteLine();
-            BinaryTreeNode<string> root = binaryTree.Root;
-            Console.Write("Pick the first node to compare: ");
-            BinaryTreeNode<string> firstNode = new BinaryTreeNode<string>(Console.ReadLine());
-            Console.Write("Pick the second node to compare: ");
-            BinaryTreeNode<string> secondNode = new BinaryTreeNode<string>(Console.ReadLine());
-            firstNode = binaryTree.TraverseFirstNode(firstNode);
-            secondNode = binaryTree.TraverseSecondNode(secondNode);
-            Console.WriteLine();
+            BinaryTreeNode<string> firstNode;
+            BinaryTreeNode<string> secondNode;
 
-            // Instantiate an object from the class TreeNode<T>.
+            do
+            {
+                // User inputs two node values that may be found in the binary tree.
+                // The program searches if each node can be found in the binary tree.
 
-            BinaryTree<string> ancestor = new BinaryTree<string>(firstNode, secondNode);
+                Console.WriteLine();
 
-            // Calling the method that finds the lowest common ancestor and prints the output.
+                Console.Write("Input the value of the first node: ");
+                firstNode = new BinaryTreeNode<string>(Console.ReadLine());
+                firstNode = binaryTree.SearchNode(binaryTree.Root, firstNode);
 
-            ancestor.PrintLowestCommonAncestor(root, firstNode, secondNode);
+                Console.Write("Input the value of the second node: ");
+                secondNode = new BinaryTreeNode<string>(Console.ReadLine());
+                secondNode = binaryTree.SearchNode(binaryTree.Root, secondNode);
+
+                // Calling the method that finds the lowest common ancestor.
+
+                ancestor = binaryTree.FindLowestCommonAncestor(binaryTree.Root, firstNode, secondNode);
+
+                // Printing the result of finding the lowest common ancestor.
+
+                binaryTree.PrintLowestCommonAncestor(ancestor, firstNode, secondNode);
+
+                // The above actions loop until user presses the ESC button that will stop the program.
+
+                Console.WriteLine();
+                Console.Write("Press the ESC button to stop searching or any other key to continue!");
+                Console.WriteLine();
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+
             Console.WriteLine();
         }
     }
