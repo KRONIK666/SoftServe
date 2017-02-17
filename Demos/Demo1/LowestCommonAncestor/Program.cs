@@ -20,7 +20,7 @@ namespace LowestCommonAncestor
 
             // Calling the method that fills the binary tree.
 
-            string[] node = new string[11];
+            string[] node = new string[15];
 
             binaryTree.InputNodes(node);
             Console.WriteLine();
@@ -33,12 +33,16 @@ namespace LowestCommonAncestor
                         new BinaryTree<string>(node[3],
                             new BinaryTree<string>(node[7]),
                             new BinaryTree<string>(node[8])),
-                        new BinaryTree<string>(node[4])),
+                        new BinaryTree<string>(node[4],
+                            new BinaryTree<string>(node[9]),
+                            new BinaryTree<string>(node[10]))),
                     new BinaryTree<string>(node[2],
                         new BinaryTree<string>(node[5],
-                            new BinaryTree<string>(node[9]),
-                            new BinaryTree<string>(node[10])),
-                        new BinaryTree<string>(node[6])));
+                            new BinaryTree<string>(node[11]),
+                            new BinaryTree<string>(node[12])),
+                        new BinaryTree<string>(node[6],
+                            new BinaryTree<string>(node[13]),
+                            new BinaryTree<string>(node[14]))));
 
             // Printing the structure of the binary tree.
 
