@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Project_Name)
+            @Html.DisplayNameFor(model => model.ProjectName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ManagerID)
@@ -23,12 +23,12 @@
     @foreach (var item in Model)
     {
         <tr>
-            @if (item.Project_Name == "without project")
+            @if (item.ProjectName == "without project")
             {
                 continue;
             }
             <td>
-                @Html.DisplayFor(modelItem => item.Project_Name)
+                @Html.DisplayFor(modelItem => item.ProjectName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectManager.Name)

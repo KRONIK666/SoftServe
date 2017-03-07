@@ -22,11 +22,11 @@ namespace HRManagerApplication.Models
         [StringLength(50)]
         public string City { get; set; }
 
-        [Column("E-mail")]
+        [Column("Email")]
         [DisplayName("E-mail")]
         [Required]
         [StringLength(50)]
-        public string E_mail { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(50)]

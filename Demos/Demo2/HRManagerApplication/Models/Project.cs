@@ -18,11 +18,11 @@ namespace HRManagerApplication.Models
 
         public int ID { get; set; }
 
-        [Column("Project Name")]
+        [Column("ProjectName")]
         [DisplayName("Project")]
         [Required]
         [StringLength(50)]
-        public string Project_Name { get; set; }
+        public string ProjectName { get; set; }
 
         [DisplayName("Managed By")]
         public int? ManagerID { get; set; }

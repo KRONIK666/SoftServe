@@ -35,7 +35,7 @@ namespace HRManagerApplication.Controllers
         // GET: Trainees/Create
         public ActionResult Create()
         {
-            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "Project_Name");
+            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "ProjectName");
             ViewBag.ManagerID = new SelectList(db.TeamLeaders, "ID", "Name");
             return View();
         }
@@ -45,7 +45,7 @@ namespace HRManagerApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,E_mail,Phone,ProjectID,ManagerID")] Trainee trainee)
+        public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Trainee trainee)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace HRManagerApplication.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "Project_Name", trainee.ProjectID);
+            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "ProjectName", trainee.ProjectID);
             ViewBag.ManagerID = new SelectList(db.TeamLeaders, "ID", "Name", trainee.ManagerID);
             return View(trainee);
         }
@@ -71,7 +71,7 @@ namespace HRManagerApplication.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "Project_Name", trainee.ProjectID);
+            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "ProjectName", trainee.ProjectID);
             ViewBag.ManagerID = new SelectList(db.TeamLeaders, "ID", "Name", trainee.ManagerID);
             return View(trainee);
         }
@@ -81,7 +81,7 @@ namespace HRManagerApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,E_mail,Phone,ProjectID,ManagerID")] Trainee trainee)
+        public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Trainee trainee)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace HRManagerApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "Project_Name", trainee.ProjectID);
+            ViewBag.ProjectID = new SelectList(db.Projects, "ID", "ProjectName", trainee.ProjectID);
             ViewBag.ManagerID = new SelectList(db.TeamLeaders, "ID", "Name", trainee.ManagerID);
             return View(trainee);
         }

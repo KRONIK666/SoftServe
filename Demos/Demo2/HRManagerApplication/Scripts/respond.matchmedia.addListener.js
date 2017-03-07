@@ -4,14 +4,14 @@
   "use strict";
   w.matchMedia = w.matchMedia || function(doc, undefined) {
     var bool, docElem = doc.documentElement, refNode = docElem.firstElementChild || docElem.firstChild, fakeBody = doc.createElement("body"), div = doc.createElement("div");
-    div.id = "mq-test-1";
+    div.Id = "mq-test-1";
     div.style.cssText = "position:absolute;top:-100em";
     fakeBody.style.background = "none";
     fakeBody.appendChild(div);
     return function(q) {
-      div.innerHTML = '&shy;<style media="' + q + '"> #mq-test-1 { width: 42px; }</style>';
+      div.innerHTML = '&shy;<style media="' + q + '"> #mq-test-1 { wIdth: 42px; }</style>';
       docElem.insertBefore(fakeBody, refNode);
-      bool = div.offsetWidth === 42;
+      bool = div.offsetWIdth === 42;
       docElem.removeChild(fakeBody);
       return {
         matches: bool,
@@ -27,9 +27,9 @@
   if (w.matchMedia && w.matchMedia("all").addListener) {
     return false;
   }
-  var localMatchMedia = w.matchMedia, hasMediaQueries = localMatchMedia("only all").matches, isListening = false, timeoutID = 0, queries = [], handleChange = function(evt) {
-    w.clearTimeout(timeoutID);
-    timeoutID = w.setTimeout(function() {
+  var localMatchMedia = w.matchMedia, hasMediaQueries = localMatchMedia("only all").matches, isListening = false, timeoutId = 0, queries = [], handleChange = function(evt) {
+    w.clearTimeout(timeoutId);
+    timeoutId = w.setTimeout(function() {
       for (var i = 0, il = queries.length; i < il; i++) {
         var mql = queries[i].mql, listeners = queries[i].listeners || [], matches = localMatchMedia(mql.media).matches;
         if (matches !== mql.matches) {
@@ -70,7 +70,7 @@
   };
 })(this);
 
-/*! Respond.js v1.4.0: min/max-width media query polyfill. (c) Scott Jehl. MIT Lic. j.mp/respondjs  */
+/*! Respond.js v1.4.0: min/max-wIdth media query polyfill. (c) Scott Jehl. MIT Lic. j.mp/respondjs  */
 (function(w) {
   "use strict";
   var respond = {};
@@ -111,8 +111,8 @@
     urls: /(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,
     findStyles: /@media *([^\{]+)\{([\S\s]+?)$/,
     only: /(only\s+)?([a-zA-Z]+)\s?/,
-    minw: /\([\s]*min\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,
-    maxw: /\([\s]*max\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/
+    minw: /\([\s]*min\-wIdth\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,
+    maxw: /\([\s]*max\-wIdth\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/
   };
   respond.mediaQueriesSupported = w.matchMedia && w.matchMedia("only all") !== null && w.matchMedia("only all").matches;
   if (respond.mediaQueriesSupported) {
@@ -120,7 +120,7 @@
   }
   var doc = w.document, docElem = doc.documentElement, mediastyles = [], rules = [], appendedEls = [], parsedSheets = {}, resizeThrottle = 30, head = doc.getElementsByTagName("head")[0] || docElem, base = doc.getElementsByTagName("base")[0], links = head.getElementsByTagName("link"), lastCall, resizeDefer, eminpx, getEmValue = function() {
     var ret, div = doc.createElement("div"), body = doc.body, originalHTMLFontSize = docElem.style.fontSize, originalBodyFontSize = body && body.style.fontSize, fakeUsed = false;
-    div.style.cssText = "position:absolute;font-size:1em;width:1em";
+    div.style.cssText = "position:absolute;font-size:1em;wIdth:1em";
     if (!body) {
       body = fakeUsed = doc.createElement("body");
       body.style.background = "none";
@@ -131,7 +131,7 @@
     if (fakeUsed) {
       docElem.insertBefore(body, docElem.firstChild);
     }
-    ret = div.offsetWidth;
+    ret = div.offsetWIdth;
     if (fakeUsed) {
       docElem.removeChild(body);
     } else {
@@ -144,7 +144,7 @@
     ret = eminpx = parseFloat(ret);
     return ret;
   }, applyMedia = function(fromResize) {
-    var name = "clientWidth", docElemProp = docElem[name], currWidth = doc.compatMode === "CSS1Compat" && docElemProp || doc.body[name] || docElemProp, styleBlocks = {}, lastLink = links[links.length - 1], now = new Date().getTime();
+    var name = "clientWIdth", docElemProp = docElem[name], currWIdth = doc.compatMode === "CSS1Compat" && docElemProp || doc.body[name] || docElemProp, styleBlocks = {}, lastLink = links[links.length - 1], now = new Date().getTime();
     if (fromResize && lastCall && now - lastCall < resizeThrottle) {
       w.clearTimeout(resizeDefer);
       resizeDefer = w.setTimeout(applyMedia, resizeThrottle);
@@ -161,7 +161,7 @@
         if (!!max) {
           max = parseFloat(max) * (max.indexOf(em) > -1 ? eminpx || getEmValue() : 1);
         }
-        if (!thisstyle.hasquery || (!minnull || !maxnull) && (minnull || currWidth >= min) && (maxnull || currWidth <= max)) {
+        if (!thisstyle.hasquery || (!minnull || !maxnull) && (minnull || currWIdth >= min) && (maxnull || currWIdth <= max)) {
           if (!styleBlocks[thisstyle.media]) {
             styleBlocks[thisstyle.media] = [];
           }

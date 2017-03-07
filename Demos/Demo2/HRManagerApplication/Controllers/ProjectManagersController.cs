@@ -44,7 +44,7 @@ namespace HRManagerApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,E_mail,Phone,ManagerID")] ProjectManager projectManager)
+        public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] ProjectManager projectManager)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HRManagerApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,E_mail,Phone,ManagerID")] ProjectManager projectManager)
+        public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] ProjectManager projectManager)
         {
             if (ModelState.IsValid)
             {

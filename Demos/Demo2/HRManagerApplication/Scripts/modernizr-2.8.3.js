@@ -100,7 +100,7 @@ window.Modernizr = (function( window, document, undefined ) {
           div = document.createElement('div'),
           // After page load injecting a fake body doesn't work so check if body exists
           body = document.body,
-          // IE6 and 7 won't return offsetWidth or offsetHeight unless it's in the body element, so we fake it.
+          // IE6 and 7 won't return offsetWIdth or offsetHeight unless it's in the body element, so we fake it.
           fakeBody = body || document.createElement('body');
 
       if ( parseInt(nodes, 10) ) {
@@ -108,29 +108,29 @@ window.Modernizr = (function( window, document, undefined ) {
           // This also allows the method to scale for unspecified uses
           while ( nodes-- ) {
               node = document.createElement('div');
-              node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
+              node.Id = testnames ? testnames[nodes] : mod + (nodes + 1);
               div.appendChild(node);
           }
       }
 
-      // <style> elements in IE6-9 are considered 'NoScope' elements and therefore will be removed
+      // <style> elements in IE6-9 are consIdered 'NoScope' elements and therefore will be removed
       // when injected with innerHTML. To get around this you need to prepend the 'NoScope' element
       // with a 'scoped' element, in our case the soft-hyphen entity as it won't mess with our measurements.
       // msdn.microsoft.com/en-us/library/ms533897%28VS.85%29.aspx
       // Documents served as xml will throw if using &shy; so use xml friendly encoded version. See issue #277
-      style = ['&#173;','<style id="s', mod, '">', rule, '</style>'].join('');
-      div.id = mod;
-      // IE6 will false positive on some tests due to the style element inside the test div somehow interfering offsetHeight, so insert it into body or fakebody.
+      style = ['&#173;','<style Id="s', mod, '">', rule, '</style>'].join('');
+      div.Id = mod;
+      // IE6 will false positive on some tests due to the style element insIde the test div somehow interfering offsetHeight, so insert it into body or fakebody.
       // Opera will act all quirky when injecting elements in documentElement when page is served as xml, needs fakebody too. #270
       (body ? div : fakeBody).innerHTML += style;
       fakeBody.appendChild(div);
       if ( !body ) {
-          //avoid crashing IE8, if background image is used
+          //avoId crashing IE8, if background image is used
           fakeBody.style.background = '';
           //Safari 5.13/5.1.4 OSX stops loading if ::-webkit-scrollbar is used and scrollbars are visible
-          fakeBody.style.overflow = 'hidden';
+          fakeBody.style.overflow = 'hIdden';
           docOverflow = docElement.style.overflow;
-          docElement.style.overflow = 'hidden';
+          docElement.style.overflow = 'hIdden';
           docElement.appendChild(fakeBody);
       }
 
@@ -222,7 +222,7 @@ window.Modernizr = (function( window, document, undefined ) {
     })(),
     /*>>hasevent*/
 
-    // TODO :: Add flag for hasownprop ? didn't last time
+    // TODO :: Add flag for hasownprop ? dIdn't last time
 
     // hasOwnProperty shim by kangax needed for Safari 2.0 support
     _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
@@ -329,7 +329,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // non-standard but works in WebKit and IE (but not Gecko or Opera),
     // we explicitly reject properties with dashes so that authors
     // developing in WebKit or IE first don't end up with
-    // browser-specific content by accident.
+    // browser-specific content by accIdent.
 
     function testProps( props, prefixed ) {
         for ( var i in props ) {
@@ -357,7 +357,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
                 // let's bind a function
                 if (is(item, 'function')){
-                  // default to autobind unless override
+                  // default to autobind unless overrIde
                   return item.bind(elem || obj);
                 }
 
@@ -380,7 +380,7 @@ window.Modernizr = (function( window, document, undefined ) {
         var ucProp  = prop.charAt(0).toUpperCase() + prop.slice(1),
             props   = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
 
-        // did they call .prefixed('boxSizing') or are we just testing a prop?
+        // dId they call .prefixed('boxSizing') or are we just testing a prop?
         if(is(prefixed, "string") || is(prefixed, "undefined")) {
           return testProps(props, prefixed);
 
@@ -427,7 +427,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // webk.it/70117 is tracking a legit WebGL feature detect proposal
 
-    // We do a soft detect which may false positive in order to avoid
+    // We do a soft detect which may false positive in order to avoId
     // an expensive context creation: bugzil.la/732441
 
     tests['webgl'] = function() {
@@ -437,7 +437,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*
      * The Modernizr.touch test only indicates if the browser supports
      *    touch events, which does not necessarily reflect a touchscreen
-     *    device, as evidenced by tablets running Windows 7 or, alas,
+     *    device, as evIdenced by tablets running Windows 7 or, alas,
      *    the Palm Pre / WebOS (touch) phones.
      *
      * Additionally, Chrome (desktop) used to lie about its support on this,
@@ -463,7 +463,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
 
-    // geolocation is often considered a trivial feature detect...
+    // geolocation is often consIdered a trivial feature detect...
     // Turns out, it's quite tricky to get right:
     //
     // Using !!navigator.geolocation does two things we don't want. It:
@@ -603,7 +603,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
 
-    // Note, Android < 4 will pass this test, but can only animate
+    // Note, AndroId < 4 will pass this test, but can only animate
     //   a single property at a time
     //   goo.gl/v3V4Gp
     tests['cssanimations'] = function() {
@@ -701,7 +701,7 @@ window.Modernizr = (function( window, document, undefined ) {
     tests['generatedcontent'] = function() {
         var bool;
 
-        injectElementWithStyles(['#',mod,'{font:0/0 a}#',mod,':after{content:"',smile,'";visibility:hidden;font:3px/1 a}'].join(''), function( node ) {
+        injectElementWithStyles(['#',mod,'{font:0/0 a}#',mod,':after{content:"',smile,'";visibility:hIdden;font:3px/1 a}'].join(''), function( node ) {
           bool = node.offsetHeight >= 3;
         });
 
@@ -710,12 +710,12 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
 
-    // These tests evaluate support of the video/audio elements, as well as
+    // These tests evaluate support of the vIdeo/audio elements, as well as
     // testing what types of content they support.
     //
     // We're using the Boolean constructor here, so that we can extend the value
-    // e.g.  Modernizr.video     // true
-    //       Modernizr.video.ogg // 'probably'
+    // e.g.  Modernizr.vIdeo     // true
+    //       Modernizr.vIdeo.ogg // 'probably'
     //
     // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
     //                     thx to NielsLeenheer and zcorpan
@@ -724,20 +724,20 @@ window.Modernizr = (function( window, document, undefined ) {
     //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
     //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
 
-    tests['video'] = function() {
-        var elem = document.createElement('video'),
+    tests['vIdeo'] = function() {
+        var elem = document.createElement('vIdeo'),
             bool = false;
 
         // IE9 Running on Windows Server SKU can cause an exception to be thrown, bug #224
         try {
             if ( bool = !!elem.canPlayType ) {
                 bool      = new Boolean(bool);
-                bool.ogg  = elem.canPlayType('video/ogg; codecs="theora"')      .replace(/^no$/,'');
+                bool.ogg  = elem.canPlayType('vIdeo/ogg; codecs="theora"')      .replace(/^no$/,'');
 
                 // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
-                bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
+                bool.h264 = elem.canPlayType('vIdeo/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
 
-                bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
+                bool.webm = elem.canPlayType('vIdeo/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
             }
 
         } catch(e) { }
@@ -756,7 +756,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool.mp3  = elem.canPlayType('audio/mpeg;')               .replace(/^no$/,'');
 
                 // Mimetypes accepted:
-                //   developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
+                //   developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_vIdeo_elements
                 //   bit.ly/iphoneoscodecs
                 bool.wav  = elem.canPlayType('audio/wav; codecs="1"')     .replace(/^no$/,'');
                 bool.m4a  = ( elem.canPlayType('audio/x-m4a;')            ||
@@ -835,7 +835,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
     // This test is only for clip paths in SVG proper, not clip paths on HTML content
-    // demo: srufaculty.sru.edu/david.dailey/svg/newstuff/clipPath4.svg
+    // demo: srufaculty.sru.edu/davId.dailey/svg/newstuff/clipPath4.svg
 
     // However read the comments to dig into applying SVG clippaths to HTML content here:
     //   github.com/Modernizr/Modernizr/issues/213#issuecomment-1149491
@@ -886,23 +886,23 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool = inputElem.type !== 'text';
 
                 // We first check to see if the type we give it sticks..
-                // If the type does, we feed it a textual value, which shouldn't be valid.
+                // If the type does, we feed it a textual value, which shouldn't be valId.
                 // If the value doesn't stick, we know there's input sanitization which infers a custom UI
                 if ( bool ) {
 
                     inputElem.value         = smile;
-                    inputElem.style.cssText = 'position:absolute;visibility:hidden;';
+                    inputElem.style.cssText = 'position:absolute;visibility:hIdden;';
 
                     if ( /^range$/.test(inputElemType) && inputElem.style.WebkitAppearance !== undefined ) {
 
                       docElement.appendChild(inputElem);
                       defaultView = document.defaultView;
 
-                      // Safari 2-4 allows the smiley as a value, despite making a slider
+                      // Safari 2-4 allows the smiley as a value, despite making a slIder
                       bool =  defaultView.getComputedStyle &&
                               defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
-                              // Mobile android web browser has false positive, so must
-                              // check the height to see if the widget is actually there.
+                              // Mobile androId web browser has false positive, so must
+                              // check the height to see if the wIdget is actually there.
                               (inputElem.offsetHeight !== 0);
 
                       docElement.removeChild(inputElem);
@@ -915,8 +915,8 @@ window.Modernizr = (function( window, document, undefined ) {
                       //  even make it here.
 
                     } else if ( /^(url|email)$/.test(inputElemType) ) {
-                      // Real url and email support comes with prebaked validation.
-                      bool = inputElem.checkValidity && inputElem.checkValidity() === false;
+                      // Real url and email support comes with prebaked valIdation.
+                      bool = inputElem.checkValIdity && inputElem.checkValIdity() === false;
 
                     } else {
                       // If the upgraded input compontent rejects the :) text, we got a winner
@@ -1027,8 +1027,8 @@ window.Modernizr = (function( window, document, undefined ) {
         /** Name of the expando, to work with multiple documents or to re-shiv one document */
         var expando = '_html5shiv';
 
-        /** The id for the the documents expando */
-        var expanID = 0;
+        /** The Id for the the documents expando */
+        var expanId = 0;
 
         /** Cached data for each document */
         var expandoData = {};
@@ -1040,8 +1040,8 @@ window.Modernizr = (function( window, document, undefined ) {
           try {
             var a = document.createElement('a');
             a.innerHTML = '<xyz></xyz>';
-            //if the hidden property is implemented we can assume, that the browser supports basic HTML5 Styles
-            supportsHtml5Styles = ('hidden' in a);
+            //if the hIdden property is implemented we can assume, that the browser supports basic HTML5 Styles
+            supportsHtml5Styles = ('hIdden' in a);
 
             supportsUnknownElements = a.childNodes.length == 1 || (function() {
               // assign a false positive if unable to shiv
@@ -1098,9 +1098,9 @@ window.Modernizr = (function( window, document, undefined ) {
           var data = expandoData[ownerDocument[expando]];
           if (!data) {
             data = {};
-            expanID++;
-            ownerDocument[expando] = expanID;
-            expandoData[expanID] = data;
+            expanId++;
+            ownerDocument[expando] = expanId;
+            expandoData[expanId] = data;
           }
           return data;
         }
@@ -1132,7 +1132,7 @@ window.Modernizr = (function( window, document, undefined ) {
             node = data.createElem(nodeName);
           }
 
-          // Avoid adding some elements to fragments in IE < 9 because
+          // AvoId adding some elements to fragments in IE < 9 because
           // * Attributes like `name` or `type` cannot be set/changed once an element
           //   is inserted into a document/fragment
           // * Link elements with `src` attributes that are inaccessible, as with
@@ -1219,10 +1219,10 @@ window.Modernizr = (function( window, document, undefined ) {
           if (html5.shivCSS && !supportsHtml5Styles && !data.hasCSS) {
             data.hasCSS = !!addStyleSheet(ownerDocument,
                                           // corrects block display not defined in IE6/7/8/9
-                                          'article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}' +
+                                          'article,asIde,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}' +
                                             // adds styling not present in IE6/7/8/9
                                             'mark{background:#FF0;color:#000}' +
-                                            // hides non-rendered elements
+                                            // hIdes non-rendered elements
                                             'template{display:none}'
                                          );
           }
@@ -1250,7 +1250,7 @@ window.Modernizr = (function( window, document, undefined ) {
            * @memberOf html5
            * @type Array|String
            */
-          'elements': options.elements || 'abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video',
+          'elements': options.elements || 'abbr article asIde audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time vIdeo',
 
           /**
            * current version of html5shiv
@@ -1323,11 +1323,11 @@ window.Modernizr = (function( window, document, undefined ) {
     // Modernizr.mq tests a given media query, live against the current state of the window
     // A few important notes:
     //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
-    //   * A max-width or orientation query will be evaluated against the current state, which may change later.
-    //   * You must specify values. Eg. If you are testing support for the min-width media query use:
-    //       Modernizr.mq('(min-width:0)')
+    //   * A max-wIdth or orientation query will be evaluated against the current state, which may change later.
+    //   * You must specify values. Eg. If you are testing support for the min-wIdth media query use:
+    //       Modernizr.mq('(min-wIdth:0)')
     // usage:
-    // Modernizr.mq('only screen and (max-width:768)')
+    // Modernizr.mq('only screen and (max-wIdth:768)')
     Modernizr.mq            = testMediaQuery;
     /*>>mq*/
 
@@ -1339,7 +1339,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>testprop*/
     // Modernizr.testProp() investigates whether a given style property is recognized
-    // Note that the property names must be provided in the camelCase variant.
+    // Note that the property names must be provIded in the camelCase variant.
     // Modernizr.testProp('pointerEvents')
     Modernizr.testProp      = function(prop){
         return testProps([prop]);
@@ -1349,7 +1349,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>testallprops*/
     // Modernizr.testAllProps() investigates whether a given style property,
     //   or any of its vendor-prefixed variants, is recognized
-    // Note that the property names must be provided in the camelCase variant.
+    // Note that the property names must be provIded in the camelCase variant.
     // Modernizr.testAllProps('boxSizing')
     Modernizr.testAllProps  = testPropsAll;
     /*>>testallprops*/
