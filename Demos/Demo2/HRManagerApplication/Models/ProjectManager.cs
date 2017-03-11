@@ -39,7 +39,7 @@ namespace HRManagerApplication.Models
         [StringLength(50)]
         public string Phone { get; set; }
 
-        [DisplayName("Manager")]
+        [DisplayName("Delivery Director")]
         public int ManagerID { get; set; }
 
         public virtual DeliveryDirector DeliveryDirector { get; set; }

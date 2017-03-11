@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<HRManagerApplication.Models.Project>
 
-@{
-    ViewBag.Title = "Projects";
-}
-
 <h2>Projects</h2>
 
 <p>
@@ -35,10 +31,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
             </td>
         </tr>
     }
-
 </table>

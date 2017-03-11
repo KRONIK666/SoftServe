@@ -38,7 +38,6 @@ namespace HRManagerApplication.Models
         [StringLength(50)]
         public string Phone { get; set; }
 
-        [DisplayName("Manager")]
         public int ManagerID { get; set; }
 
         public virtual CEO CEO { get; set; }

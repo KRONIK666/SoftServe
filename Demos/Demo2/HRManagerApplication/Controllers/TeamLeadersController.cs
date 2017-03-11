@@ -35,9 +35,14 @@ namespace HRManagerApplication.Controllers
         // GET: TeamLeaders/Create
         public ActionResult Create()
         {
+            TeamLeader position = new TeamLeader()
+            {
+                Position = "Team Leader"
+            };
+
             ViewBag.ProjectID = new SelectList(db.Projects, "ID", "ProjectName");
             ViewBag.ManagerID = new SelectList(db.ProjectManagers, "ID", "Name");
-            return View();
+            return View(position);
         }
 
         // POST: TeamLeaders/Create

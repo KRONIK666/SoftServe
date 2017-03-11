@@ -35,8 +35,13 @@ namespace HRManagerApplication.Controllers
         // GET: ProjectManagers/Create
         public ActionResult Create()
         {
+            ProjectManager position = new ProjectManager()
+            {
+                Position = "Project Manager"
+            };
+
             ViewBag.ManagerID = new SelectList(db.DeliveryDirectors, "ID", "Name");
-            return View();
+            return View(position);
         }
 
         // POST: ProjectManagers/Create

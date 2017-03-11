@@ -34,7 +34,7 @@ namespace HRManagerApplication.Models
 
         public int ProjectID { get; set; }
 
-        [DisplayName("Managed By")]
+        [DisplayName("Team Leader")]
         public int? ManagerID { get; set; }
 
         public virtual Project Project { get; set; }

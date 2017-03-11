@@ -1,14 +1,7 @@
 ﻿@model IEnumerable<HRManagerApplication.Models.CEO>
 
-@{
-    ViewBag.Title = "CEO";
-}
-
 <h2>CEO</h2>
 
-<p>
-    @Html.ActionLink("Add new CEO", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -55,10 +48,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
             </td>
         </tr>
     }
-
 </table>

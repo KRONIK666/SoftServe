@@ -35,8 +35,13 @@ namespace HRManagerApplication.Controllers
         // GET: DeliveryDirectors/Create
         public ActionResult Create()
         {
+            DeliveryDirector position = new DeliveryDirector()
+            {
+                Position = "Delivery Director"
+            };
+
             ViewBag.ManagerID = new SelectList(db.CEOs, "ID", "Name");
-            return View();
+            return View(position);
         }
 
         // POST: DeliveryDirectors/Create

@@ -148,7 +148,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -192,13 +191,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CEOs\Create.cshtml" />
-    <Content Include="Views\CEOs\Delete.cshtml" />
     <Content Include="Views\CEOs\Details.cshtml" />
     <Content Include="Views\CEOs\Edit.cshtml" />
     <Content Include="Views\CEOs\Index.cshtml" />
     <Content Include="Views\DeliveryDirectors\Create.cshtml" />
-    <Content Include="Views\DeliveryDirectors\Delete.cshtml" />
     <Content Include="Views\DeliveryDirectors\Details.cshtml" />
     <Content Include="Views\DeliveryDirectors\Edit.cshtml" />
     <Content Include="Views\DeliveryDirectors\Index.cshtml" />
@@ -213,12 +209,10 @@
     <Content Include="Views\Juniors\Edit.cshtml" />
     <Content Include="Views\Juniors\Index.cshtml" />
     <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
     <Content Include="Views\Projects\Details.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\ProjectManagers\Create.cshtml" />
-    <Content Include="Views\ProjectManagers\Delete.cshtml" />
     <Content Include="Views\ProjectManagers\Details.cshtml" />
     <Content Include="Views\ProjectManagers\Edit.cshtml" />
     <Content Include="Views\ProjectManagers\Index.cshtml" />
@@ -228,7 +222,6 @@
     <Content Include="Views\Seniors\Edit.cshtml" />
     <Content Include="Views\Seniors\Index.cshtml" />
     <Content Include="Views\TeamLeaders\Create.cshtml" />
-    <Content Include="Views\TeamLeaders\Delete.cshtml" />
     <Content Include="Views\TeamLeaders\Details.cshtml" />
     <Content Include="Views\TeamLeaders\Edit.cshtml" />
     <Content Include="Views\TeamLeaders\Index.cshtml" />

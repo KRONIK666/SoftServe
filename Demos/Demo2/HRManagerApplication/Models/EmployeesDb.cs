@@ -7,6 +7,7 @@ namespace HRManagerApplication.Models
         public EmployeesDb()
             : base("name=EmployeesDb")
         {
+
         }
 
         public virtual DbSet<CEO> CEOs { get; set; }

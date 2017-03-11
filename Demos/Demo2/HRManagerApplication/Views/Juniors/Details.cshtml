@@ -1,9 +1,5 @@
 ﻿@model HRManagerApplication.Models.Junior
 
-@{
-    ViewBag.Title = "Details";
-}
-
 <h2>Details</h2>
 
 <div>
@@ -16,14 +12,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Position)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Position)
         </dd>
 
         <dt>
@@ -67,7 +55,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ManagerID)
+            @Html.LabelFor(model => model.ManagerID, "Team Leader")
         </dt>
 
         <dd>
