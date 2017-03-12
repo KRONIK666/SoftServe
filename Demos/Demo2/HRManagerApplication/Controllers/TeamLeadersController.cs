@@ -1,4 +1,5 @@
 ﻿using HRManagerApplication.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -99,30 +100,55 @@ namespace HRManagerApplication.Controllers
             return View(teamLeader);
         }
 
-        // GET: TeamLeaders/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Team(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             TeamLeader teamLeader = db.TeamLeaders.Find(id);
+
             if (teamLeader == null)
             {
                 return HttpNotFound();
             }
-            return View(teamLeader);
-        }
 
-        // POST: TeamLeaders/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            TeamLeader teamLeader = db.TeamLeaders.Find(id);
-            db.TeamLeaders.Remove(teamLeader);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var query1 = (from row in db.TeamLeaders
+                          where row.Project.ProjectName == teamLeader.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query2 = (from row in db.Seniors
+                          where row.Project.ProjectName == teamLeader.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query3 = (from row in db.Intermediates
+                          where row.Project.ProjectName == teamLeader.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query4 = (from row in db.Juniors
+                          where row.Project.ProjectName == teamLeader.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query5 = (from row in db.Trainees
+                          where row.Project.ProjectName == teamLeader.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query = query1.Concat(query2).Concat(query3).Concat(query4).Concat(query5);
+
+            var team = new List<TeamLeader>();
+
+            foreach (var item in query)
+            {
+                team.Add(new TeamLeader()
+                {
+                    Name = item.Name,
+                    Position = item.Position,
+                    Project = item.Project
+                });
+            }
+
+            return View(team);
         }
 
         protected override void Dispose(bool disposing)

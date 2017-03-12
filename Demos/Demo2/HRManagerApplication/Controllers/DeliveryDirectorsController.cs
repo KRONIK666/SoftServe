@@ -95,32 +95,6 @@ namespace HRManagerApplication.Controllers
             return View(deliveryDirector);
         }
 
-        // GET: DeliveryDirectors/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DeliveryDirector deliveryDirector = db.DeliveryDirectors.Find(id);
-            if (deliveryDirector == null)
-            {
-                return HttpNotFound();
-            }
-            return View(deliveryDirector);
-        }
-
-        // POST: DeliveryDirectors/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            DeliveryDirector deliveryDirector = db.DeliveryDirectors.Find(id);
-            db.DeliveryDirectors.Remove(deliveryDirector);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

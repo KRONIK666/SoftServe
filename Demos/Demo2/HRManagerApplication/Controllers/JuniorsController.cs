@@ -1,4 +1,5 @@
 ﻿using HRManagerApplication.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -123,6 +124,57 @@ namespace HRManagerApplication.Controllers
             db.Juniors.Remove(junior);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Team(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Junior junior = db.Juniors.Find(id);
+
+            if (junior == null)
+            {
+                return HttpNotFound();
+            }
+
+            var query1 = (from row in db.TeamLeaders
+                          where row.Project.ProjectName == junior.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query2 = (from row in db.Seniors
+                          where row.Project.ProjectName == junior.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query3 = (from row in db.Intermediates
+                          where row.Project.ProjectName == junior.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query4 = (from row in db.Juniors
+                          where row.Project.ProjectName == junior.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query5 = (from row in db.Trainees
+                          where row.Project.ProjectName == junior.Project.ProjectName
+                          select new { row.Name, row.Position, row.Project, row.Project.ProjectManager });
+
+            var query = query1.Concat(query2).Concat(query3).Concat(query4).Concat(query5);
+
+            var team = new List<Junior>();
+
+            foreach (var item in query)
+            {
+                team.Add(new Junior()
+                {
+                    Name = item.Name,
+                    Position = item.Position,
+                    Project = item.Project
+                });
+            }
+
+            return View(team);
         }
 
         protected override void Dispose(bool disposing)

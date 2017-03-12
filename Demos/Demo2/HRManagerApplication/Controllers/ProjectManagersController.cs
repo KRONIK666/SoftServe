@@ -95,32 +95,6 @@ namespace HRManagerApplication.Controllers
             return View(projectManager);
         }
 
-        // GET: ProjectManagers/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ProjectManager projectManager = db.ProjectManagers.Find(id);
-            if (projectManager == null)
-            {
-                return HttpNotFound();
-            }
-            return View(projectManager);
-        }
-
-        // POST: ProjectManagers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            ProjectManager projectManager = db.ProjectManagers.Find(id);
-            db.ProjectManagers.Remove(projectManager);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
