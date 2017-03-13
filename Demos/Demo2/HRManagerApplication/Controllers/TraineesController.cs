@@ -11,14 +11,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: Trainees
+        // GET: All Trainees from database.
         public ActionResult Index()
         {
             var trainees = db.Trainees.Include(t => t.Project).Include(t => t.TeamLeader);
             return View(trainees.ToList());
         }
 
-        // GET: Trainees/Details/5
+        // GET: Details of Trainees.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace HRManagerApplication.Controllers
             return View(trainee);
         }
 
-        // GET: Trainees/Create
+        // GET: Trainees to Create.
         public ActionResult Create()
         {
             Trainee position = new Trainee()
@@ -46,9 +46,7 @@ namespace HRManagerApplication.Controllers
             return View(position);
         }
 
-        // POST: Trainees/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Trainees.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Trainee trainee)
@@ -65,7 +63,7 @@ namespace HRManagerApplication.Controllers
             return View(trainee);
         }
 
-        // GET: Trainees/Edit/5
+        // GET: Trainees to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,9 +80,7 @@ namespace HRManagerApplication.Controllers
             return View(trainee);
         }
 
-        // POST: Trainees/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Trainees.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Trainee trainee)
@@ -100,7 +96,7 @@ namespace HRManagerApplication.Controllers
             return View(trainee);
         }
 
-        // GET: Trainees/Delete/5
+        // GET: Trainees to Delete.
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +111,7 @@ namespace HRManagerApplication.Controllers
             return View(trainee);
         }
 
-        // POST: Trainees/Delete/5
+        // POST: Delete Trainees.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -126,6 +122,7 @@ namespace HRManagerApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Members of the teams working on projects.
         public ActionResult Team(int? id)
         {
             if (id == null)
@@ -177,6 +174,7 @@ namespace HRManagerApplication.Controllers
             return View(team);
         }
 
+        // Disposing the database.
         protected override void Dispose(bool disposing)
         {
             if (disposing)

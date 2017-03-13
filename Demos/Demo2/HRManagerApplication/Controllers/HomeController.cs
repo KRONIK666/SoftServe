@@ -9,8 +9,6 @@ namespace HRManagerApplication.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Manage company employees database.";
-
             return View();
         }
     }

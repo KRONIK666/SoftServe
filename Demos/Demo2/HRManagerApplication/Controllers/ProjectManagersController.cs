@@ -95,6 +95,7 @@ namespace HRManagerApplication.Controllers
             return View(projectManager);
         }
 
+        // Disposing the database.
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -100,7 +100,7 @@ namespace HRManagerApplication.Controllers
             return View(junior);
         }
 
-        // GET: Juniors/Delete/5
+        // GET: Juniors to Delete.
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +115,7 @@ namespace HRManagerApplication.Controllers
             return View(junior);
         }
 
-        // POST: Juniors/Delete/5
+        // POST: Delete Juniors.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -126,6 +126,7 @@ namespace HRManagerApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Members of the teams working on projects.
         public ActionResult Team(int? id)
         {
             if (id == null)
@@ -177,6 +178,7 @@ namespace HRManagerApplication.Controllers
             return View(team);
         }
 
+        // Disposing the database.
         protected override void Dispose(bool disposing)
         {
             if (disposing)

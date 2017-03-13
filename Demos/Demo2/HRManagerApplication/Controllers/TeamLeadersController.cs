@@ -100,6 +100,7 @@ namespace HRManagerApplication.Controllers
             return View(teamLeader);
         }
 
+        // GET: Members of the teams working on projects.
         public ActionResult Team(int? id)
         {
             if (id == null)
@@ -151,6 +152,7 @@ namespace HRManagerApplication.Controllers
             return View(team);
         }
 
+        // Disposing the database.
         protected override void Dispose(bool disposing)
         {
             if (disposing)

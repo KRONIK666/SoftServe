@@ -100,7 +100,7 @@ namespace HRManagerApplication.Controllers
             return View(intermediate);
         }
 
-        // GET: Intermediates/Delete/5
+        // GET: Intermediates to Delete.
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +115,7 @@ namespace HRManagerApplication.Controllers
             return View(intermediate);
         }
 
-        // POST: Intermediates/Delete/5
+        // POST: Delete Intermediates.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -126,6 +126,7 @@ namespace HRManagerApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Members of the teams working on projects.
         public ActionResult Team(int? id)
         {
             if (id == null)
@@ -177,6 +178,7 @@ namespace HRManagerApplication.Controllers
             return View(team);
         }
 
+        // Disposing the database.
         protected override void Dispose(bool disposing)
         {
             if (disposing)
