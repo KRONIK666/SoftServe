@@ -11,14 +11,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: Juniors
+        // GET: All Juniors from database.
         public ActionResult Index()
         {
             var juniors = db.Juniors.Include(j => j.Project).Include(j => j.TeamLeader);
             return View(juniors.ToList());
         }
 
-        // GET: Juniors/Details/5
+        // GET: Details of Juniors.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace HRManagerApplication.Controllers
             return View(junior);
         }
 
-        // GET: Juniors/Create
+        // GET: Juniors to Create.
         public ActionResult Create()
         {
             Junior position = new Junior()
@@ -46,9 +46,7 @@ namespace HRManagerApplication.Controllers
             return View(position);
         }
 
-        // POST: Juniors/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Juniors.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Junior junior)
@@ -65,7 +63,7 @@ namespace HRManagerApplication.Controllers
             return View(junior);
         }
 
-        // GET: Juniors/Edit/5
+        // GET: Juniors to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,9 +80,7 @@ namespace HRManagerApplication.Controllers
             return View(junior);
         }
 
-        // POST: Juniors/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Juniors.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Junior junior)

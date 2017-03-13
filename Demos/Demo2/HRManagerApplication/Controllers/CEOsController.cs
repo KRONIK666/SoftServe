@@ -10,13 +10,13 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: CEOs
+        // GET: CEO from database.
         public ActionResult Index()
         {
             return View(db.CEOs.ToList());
         }
 
-        // GET: CEOs/Details/5
+        // GET: Details of CEO.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -31,7 +31,7 @@ namespace HRManagerApplication.Controllers
             return View(cEO);
         }
 
-        // GET: CEOs/Edit/5
+        // GET: CEO to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -46,9 +46,7 @@ namespace HRManagerApplication.Controllers
             return View(cEO);
         }
 
-        // POST: CEOs/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit CEO.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone")] CEO cEO)

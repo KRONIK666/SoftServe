@@ -11,14 +11,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: Intermediates
+        // GET: All Intermediates from database.
         public ActionResult Index()
         {
             var intermediates = db.Intermediates.Include(i => i.Project).Include(i => i.TeamLeader);
             return View(intermediates.ToList());
         }
 
-        // GET: Intermediates/Details/5
+        // GET: Details of Intermediates.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace HRManagerApplication.Controllers
             return View(intermediate);
         }
 
-        // GET: Intermediates/Create
+        // GET: Intermediates to Create.
         public ActionResult Create()
         {
             Intermediate position = new Intermediate()
@@ -46,9 +46,7 @@ namespace HRManagerApplication.Controllers
             return View(position);
         }
 
-        // POST: Intermediates/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Intermediates.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Intermediate intermediate)
@@ -65,7 +63,7 @@ namespace HRManagerApplication.Controllers
             return View(intermediate);
         }
 
-        // GET: Intermediates/Edit/5
+        // GET: Intermediates to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,9 +80,7 @@ namespace HRManagerApplication.Controllers
             return View(intermediate);
         }
 
-        // POST: Intermediates/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Intermediates.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ProjectID,ManagerID")] Intermediate intermediate)

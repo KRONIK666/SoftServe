@@ -10,14 +10,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: DeliveryDirectors
+        // GET: All Delivery Directors from database.
         public ActionResult Index()
         {
             var deliveryDirectors = db.DeliveryDirectors.Include(d => d.CEO);
             return View(deliveryDirectors.ToList());
         }
 
-        // GET: DeliveryDirectors/Details/5
+        // GET: Details of Delivery Directors.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -32,7 +32,7 @@ namespace HRManagerApplication.Controllers
             return View(deliveryDirector);
         }
 
-        // GET: DeliveryDirectors/Create
+        // GET: Delivery Directors to Create.
         public ActionResult Create()
         {
             DeliveryDirector position = new DeliveryDirector()
@@ -44,9 +44,7 @@ namespace HRManagerApplication.Controllers
             return View(position);
         }
 
-        // POST: DeliveryDirectors/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Delivery Directors.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] DeliveryDirector deliveryDirector)
@@ -62,7 +60,7 @@ namespace HRManagerApplication.Controllers
             return View(deliveryDirector);
         }
 
-        // GET: DeliveryDirectors/Edit/5
+        // GET: Delivery Directors to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,9 +76,7 @@ namespace HRManagerApplication.Controllers
             return View(deliveryDirector);
         }
 
-        // POST: DeliveryDirectors/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Delivery Directors.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] DeliveryDirector deliveryDirector)

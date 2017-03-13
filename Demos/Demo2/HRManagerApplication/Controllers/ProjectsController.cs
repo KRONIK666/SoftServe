@@ -10,14 +10,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: Projects
+        // GET: All Projects from database.
         public ActionResult Index()
         {
             var projects = db.Projects.Include(p => p.ProjectManager);
             return View(projects.ToList());
         }
 
-        // GET: Projects/Details/5
+        // GET: Details of Projects.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -32,16 +32,14 @@ namespace HRManagerApplication.Controllers
             return View(project);
         }
 
-        // GET: Projects/Create
+        // GET: Projects  to Create.
         public ActionResult Create()
         {
             ViewBag.ManagerID = new SelectList(db.ProjectManagers, "ID", "Name");
             return View();
         }
 
-        // POST: Projects/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Projects.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,ProjectName,ManagerID")] Project project)
@@ -57,7 +55,7 @@ namespace HRManagerApplication.Controllers
             return View(project);
         }
 
-        // GET: Projects/Edit/5
+        // GET: Projects to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +71,7 @@ namespace HRManagerApplication.Controllers
             return View(project);
         }
 
-        // POST: Projects/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Projects.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,ProjectName,ManagerID")] Project project)

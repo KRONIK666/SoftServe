@@ -10,14 +10,14 @@ namespace HRManagerApplication.Controllers
     {
         private EmployeesDb db = new EmployeesDb();
 
-        // GET: ProjectManagers
+        // GET: All Project Managers from database.
         public ActionResult Index()
         {
             var projectManagers = db.ProjectManagers.Include(p => p.DeliveryDirector);
             return View(projectManagers.ToList());
         }
 
-        // GET: ProjectManagers/Details/5
+        // GET: Details of Project Managers.
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -32,7 +32,7 @@ namespace HRManagerApplication.Controllers
             return View(projectManager);
         }
 
-        // GET: ProjectManagers/Create
+        // GET: Project Managers to Create.
         public ActionResult Create()
         {
             ProjectManager position = new ProjectManager()
@@ -44,9 +44,7 @@ namespace HRManagerApplication.Controllers
             return View(position);
         }
 
-        // POST: ProjectManagers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create Project Managers.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] ProjectManager projectManager)
@@ -62,7 +60,7 @@ namespace HRManagerApplication.Controllers
             return View(projectManager);
         }
 
-        // GET: ProjectManagers/Edit/5
+        // GET: Project Managers to Edit.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,9 +76,7 @@ namespace HRManagerApplication.Controllers
             return View(projectManager);
         }
 
-        // POST: ProjectManagers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit Project Managers.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Position,Salary,City,Email,Phone,ManagerID")] ProjectManager projectManager)
