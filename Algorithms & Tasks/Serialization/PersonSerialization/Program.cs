@@ -9,38 +9,6 @@ namespace PersonIO
 {
     class Program
     {
-        static void Serialization(Person st1, IFormatter formatter, string streamName)
-        {
-            // Binary or Soap serialization
-            Stream serialStream = new FileStream(streamName, FileMode.Create);
-            formatter.Serialize(serialStream, st1);
-            serialStream.Close();
-
-            // Binary or Soap deserialization
-            Console.WriteLine("Alternative name:");
-            serialStream = new FileStream(streamName, FileMode.Open);
-            Person st2 = (Person)formatter.Deserialize(serialStream);
-            Console.WriteLine(st2);
-        }
-
-        static void XMLSerialization(PersonXML st1)
-        {
-            // XML serialization
-            Type t = typeof(PersonXML);
-            XmlSerializer xmlser = new XmlSerializer(t);
-
-            Stream serialStream = new FileStream("person.xml", FileMode.Create);
-            xmlser.Serialize(serialStream, st1);
-            serialStream.Close();
-
-            // XML deserialization
-            serialStream = new FileStream("person.xml", FileMode.Open);
-            object o = xmlser.Deserialize(serialStream);
-            PersonXML st2 = o as PersonXML;
-            serialStream.Close();
-            Console.WriteLine(st2);
-        }
-
         static void Main(string[] args)
         {
             Person st1 = new Person("Iryna", "Kovalska", new DateTime(1983, 5, 17));
@@ -82,6 +50,38 @@ namespace PersonIO
             xmlPersons.Serialize(serialStream, pf);
             serialStream.Close();
             Console.Read();
+        }
+
+        static void Serialization(Person st1, IFormatter formatter, string streamName)
+        {
+            // Binary or Soap serialization
+            Stream serialStream = new FileStream(streamName, FileMode.Create);
+            formatter.Serialize(serialStream, st1);
+            serialStream.Close();
+
+            // Binary or Soap deserialization
+            Console.WriteLine("Alternative name:");
+            serialStream = new FileStream(streamName, FileMode.Open);
+            Person st2 = (Person)formatter.Deserialize(serialStream);
+            Console.WriteLine(st2);
+        }
+
+        static void XMLSerialization(PersonXML st1)
+        {
+            // XML serialization
+            Type t = typeof(PersonXML);
+            XmlSerializer xmlser = new XmlSerializer(t);
+
+            Stream serialStream = new FileStream("person.xml", FileMode.Create);
+            xmlser.Serialize(serialStream, st1);
+            serialStream.Close();
+
+            // XML deserialization
+            serialStream = new FileStream("person.xml", FileMode.Open);
+            object o = xmlser.Deserialize(serialStream);
+            PersonXML st2 = o as PersonXML;
+            serialStream.Close();
+            Console.WriteLine(st2);
         }
     }
 }
