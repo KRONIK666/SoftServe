@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchAlgorithm", "SwitchAlgorithm\SwitchAlgorithm.csproj", "{5B4C43E5-62BE-4DBE-9AF6-14D5286376FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{FD968958-05E2-4CE7-8606-2715D7362AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action", "Action\Action.csproj", "{D661C9E8-B5E4-4A80-8344-D902B0B37694}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{5B4C43E5-62BE-4DBE-9AF6-14D5286376FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B4C43E5-62BE-4DBE-9AF6-14D5286376FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B4C43E5-62BE-4DBE-9AF6-14D5286376FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD968958-05E2-4CE7-8606-2715D7362AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD968958-05E2-4CE7-8606-2715D7362AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD968958-05E2-4CE7-8606-2715D7362AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD968958-05E2-4CE7-8606-2715D7362AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D661C9E8-B5E4-4A80-8344-D902B0B37694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D661C9E8-B5E4-4A80-8344-D902B0B37694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D661C9E8-B5E4-4A80-8344-D902B0B37694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D661C9E8-B5E4-4A80-8344-D902B0B37694}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
