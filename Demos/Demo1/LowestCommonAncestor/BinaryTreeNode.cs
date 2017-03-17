@@ -1,7 +1,6 @@
 ﻿namespace LowestCommonAncestor
 {
     // This class represents a binary tree node.
-
     public class BinaryTreeNode<T>
     {
         private T value;
@@ -27,14 +26,12 @@
         }
 
         // Constructor without parameters that constructs a binary tree node.
-
         public BinaryTreeNode()
         {
 
         }
 
         // Constructs a binary tree node that has children.
-
         public BinaryTreeNode(T value, BinaryTreeNode<T> leftChild, BinaryTreeNode<T> rightChild)
         {
             this.value = value;
@@ -43,7 +40,6 @@
         }
 
         // Constructs a binary tree node that has no children.
-
         public BinaryTreeNode(T value)
             : this(value, null, null)
         {

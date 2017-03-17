@@ -4,7 +4,6 @@ using System.Collections.Generic;
 namespace LowestCommonAncestor
 {
     // This class represents a binary tree structure.
-
     public class BinaryTree<T>
     {
         private BinaryTreeNode<T> root;
@@ -15,14 +14,12 @@ namespace LowestCommonAncestor
         }
 
         // A constructor used to initialise a Binary Tree.
-
         public BinaryTree()
         {
 
         }
 
         // Constructors that construct the binary tree.
-
         public BinaryTree(T value, BinaryTree<T> leftChild, BinaryTree<T> rightChild)
         {
             BinaryTreeNode<T> leftChildNode = leftChild != null ? leftChild.root : null;
@@ -37,7 +34,6 @@ namespace LowestCommonAncestor
         }
 
         // With this method the user inputs random nodes to fill the binary tree structure.
-
         public void InputNodes(string[] nodes)
         {
             string value;
@@ -64,7 +60,6 @@ namespace LowestCommonAncestor
         }
 
         // Methods that traverse and print the binary tree with the Preorder algorithm.
-
         private void printPreorder(BinaryTreeNode<T> root, int interval)
         {
             if (root == null)
@@ -86,7 +81,6 @@ namespace LowestCommonAncestor
         }
 
         // This method traverses the binary tree and finds the node given by the user.
-
         public BinaryTreeNode<T> SearchNode(BinaryTreeNode<T> root, BinaryTreeNode<T> inputNode)
         {
             if (root == null)
@@ -119,7 +113,6 @@ namespace LowestCommonAncestor
         }
 
         // The method where the lowest common ancestor algorithm is realized.
-
         public BinaryTreeNode<T> FindLowestCommonAncestor(BinaryTreeNode<T> root, BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
         {
             if (root == null)
@@ -151,14 +144,12 @@ namespace LowestCommonAncestor
         }
 
         // This method prints as an output the result if a lowest common ancestor is found.
-
         public void PrintLowestCommonAncestor(BinaryTreeNode<T> ancestor, BinaryTreeNode<T> firstNode, BinaryTreeNode<T> secondNode)
         {
             Console.WriteLine();
 
             // If the user inputs a node that cannot be found in the binary tree the method will catch a null reference exception.
             // If a null reference exception is cought the program will continue running without crashing when it tries to print a null.
-
             try
             {
                 Console.WriteLine("Lowest common ancestor of {0} and {1} is {2}.", firstNode.Value, secondNode.Value, ancestor.Value);
