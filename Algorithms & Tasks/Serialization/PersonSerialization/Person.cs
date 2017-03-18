@@ -29,7 +29,7 @@ namespace PersonIO
             info.AddValue("AltLastName", "XXX");
         }
 
-        // Add a constructor to enable a deserialization.
+        // Adds a constructor to enable a deserialization.
         public Person(SerializationInfo info, StreamingContext context)
         {
             firstName = info.GetString("AltFirstName");

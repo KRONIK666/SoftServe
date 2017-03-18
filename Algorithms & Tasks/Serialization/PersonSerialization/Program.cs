@@ -14,22 +14,22 @@ namespace PersonIO
             Person st1 = new Person("Iryna", "Kovalska", new DateTime(1983, 5, 17));
             Console.WriteLine(st1);
 
-            // Binary
+            // Binary.
             BinaryFormatter bFormatter = new BinaryFormatter();
             string bname = "person.dat";
             Serialization(st1, bFormatter, bname);
 
-            // Soap
+            // Soap.
             SoapFormatter sFormatter = new SoapFormatter();
             string sname = "person.soap";
             Serialization(st1, sFormatter, sname);
 
-            // XML
+            // XML.
             PersonXML st2 = new PersonXML("Danylo", "Koval", new DateTime(1980, 12, 11));
             Console.WriteLine(st2);
             XMLSerialization(st2);
 
-            // XML PersonFile serialization
+            // XML PersonFile serialization.
             PersonXML st01 = new PersonXML("Danylo", "Koval", new DateTime(1980, 12, 11));
             PersonXML st02 = new PersonXML("Fronia", "Kos", new DateTime(1983, 2, 14));
             PersonXML st03 = new PersonXML("Sviatek", "Los", new DateTime(1984, 1, 1));
@@ -54,12 +54,12 @@ namespace PersonIO
 
         static void Serialization(Person st1, IFormatter formatter, string streamName)
         {
-            // Binary or Soap serialization
+            // Binary or Soap serialization.
             Stream serialStream = new FileStream(streamName, FileMode.Create);
             formatter.Serialize(serialStream, st1);
             serialStream.Close();
 
-            // Binary or Soap deserialization
+            // Binary or Soap deserialization.
             Console.WriteLine("Alternative name:");
             serialStream = new FileStream(streamName, FileMode.Open);
             Person st2 = (Person)formatter.Deserialize(serialStream);
@@ -68,7 +68,7 @@ namespace PersonIO
 
         static void XMLSerialization(PersonXML st1)
         {
-            // XML serialization
+            // XML serialization.
             Type t = typeof(PersonXML);
             XmlSerializer xmlser = new XmlSerializer(t);
 
@@ -76,7 +76,7 @@ namespace PersonIO
             xmlser.Serialize(serialStream, st1);
             serialStream.Close();
 
-            // XML deserialization
+            // XML deserialization.
             serialStream = new FileStream("person.xml", FileMode.Open);
             object o = xmlser.Deserialize(serialStream);
             PersonXML st2 = o as PersonXML;
