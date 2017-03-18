@@ -21,7 +21,7 @@ namespace Action
 
             Console.WriteLine("First name: " + employees.Find(predicate).FirstName);
 
-            // Or by using Lambda Expressions.
+            // Same output by using Lambda Expressions.
             Console.Write("First name: ");
             Console.WriteLine(employees.Find(e => e.Birthday.Year == 1986).FirstName);
             Console.WriteLine();
