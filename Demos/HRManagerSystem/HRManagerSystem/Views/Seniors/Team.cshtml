@@ -1,0 +1,78 @@
+﻿@model List<HRManagerSystem.Models.Senior>
+
+@{
+    ViewBag.Title = "Team";
+}
+
+@foreach (var item in Model)
+{
+    if (item.Project.ProjectName == "without project")
+    {
+        ViewBag.Title = "Employees that are not part of any Team and currently not working on a project";
+        break;
+    }
+}
+
+<br />
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Project</th>
+        <th>Project Manager</th>
+        <th>Delivery Director</th>
+        <th>CEO</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectName)
+            </td>
+            @if (item.Project.ProjectName == "without project")
+            {
+                <td>not assigned</td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.ProjectManager.Name)
+                </td>
+            }
+            @if (item.Project.ProjectName == "without project")
+            {
+                <td>not assigned</td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.ProjectManager.DeliveryDirector.Name)
+                </td>
+            }
+            @if (item.Project.ProjectName == "without project")
+            {
+                <td>not assigned</td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.ProjectManager.DeliveryDirector.CEO.Name)
+                </td>
+            }
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
