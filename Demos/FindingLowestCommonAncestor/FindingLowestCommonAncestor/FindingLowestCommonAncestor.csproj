@@ -7,8 +7,8 @@
     <ProjectGuid>{84947A1D-6C85-4D9F-BED4-58C60064E757}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LowestCommonAncestor</RootNamespace>
-    <AssemblyName>LowestCommonAncestor</AssemblyName>
+    <RootNamespace>FindingLowestCommonAncestor</RootNamespace>
+    <AssemblyName>FindingLowestCommonAncestor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

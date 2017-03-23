@@ -1,4 +1,4 @@
-﻿namespace LowestCommonAncestor
+﻿namespace FindingLowestCommonAncestor
 {
     // This class represents a binary tree node.
     public class BinaryTreeNode<T>

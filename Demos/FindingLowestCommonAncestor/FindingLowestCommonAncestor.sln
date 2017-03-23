@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowestCommonAncestor", "LowestCommonAncestor\LowestCommonAncestor.csproj", "{84947A1D-6C85-4D9F-BED4-58C60064E757}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingLowestCommonAncestor", "FindingLowestCommonAncestor\FindingLowestCommonAncestor.csproj", "{84947A1D-6C85-4D9F-BED4-58C60064E757}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

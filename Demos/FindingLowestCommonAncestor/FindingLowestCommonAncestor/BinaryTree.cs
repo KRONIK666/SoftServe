@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LowestCommonAncestor
+namespace FindingLowestCommonAncestor
 {
     // This class represents a binary tree structure.
     public class BinaryTree<T>

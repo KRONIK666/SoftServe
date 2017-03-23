@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LowestCommonAncestor
+namespace FindingLowestCommonAncestor
 {
     // This Program creates a sample binary tree.
     // This Program finds the lowest common ancestor of two nodes.
