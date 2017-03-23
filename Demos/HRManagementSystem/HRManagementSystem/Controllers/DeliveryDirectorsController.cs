@@ -1,8 +1,9 @@
-﻿using HRManagementSystem.Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+
+using HRManagementSystem.Models;
 
 namespace HRManagementSystem.Controllers
 {

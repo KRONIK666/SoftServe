@@ -1,5 +1,6 @@
-﻿using HRManagementSystem.Models;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+
+using HRManagementSystem.Models;
 
 namespace HRManagementSystem.Controllers
 {
