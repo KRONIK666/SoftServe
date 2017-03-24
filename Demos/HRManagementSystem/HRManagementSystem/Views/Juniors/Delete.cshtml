@@ -1,0 +1,20 @@
+﻿@model HRManagementSystem.Models.Junior
+
+<h2>Delete</h2>
+
+<p>
+    Are you sure you want to delete @Html.DisplayFor(model => model.Name)
+    from the database?
+</p>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
