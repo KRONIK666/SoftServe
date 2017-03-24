@@ -1,6 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\bin\Debug\Action.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\bin\Debug\Action.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\bin\Debug\Action.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\obj\Debug\Action.csprojResolveAssemblyReference.cache
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\obj\Debug\Action.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Action\obj\Debug\Action.pdb

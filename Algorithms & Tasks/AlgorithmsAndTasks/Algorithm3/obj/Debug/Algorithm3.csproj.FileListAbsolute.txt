@@ -1,6 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\bin\Debug\Algorithm3.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\bin\Debug\Algorithm3.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\bin\Debug\Algorithm3.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\obj\Debug\Algorithm3.csprojResolveAssemblyReference.cache
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\obj\Debug\Algorithm3.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm3\obj\Debug\Algorithm3.pdb

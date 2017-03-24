@@ -1,6 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\bin\Debug\FindingLowestCommonAncestor.exe.config
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\bin\Debug\FindingLowestCommonAncestor.exe
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\bin\Debug\FindingLowestCommonAncestor.pdb
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\obj\Debug\FindingLowestCommonAncestor.csprojResolveAssemblyReference.cache
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\obj\Debug\FindingLowestCommonAncestor.exe
-E:\SOFT INTELLECT\SoftServe\Demos\FindingLowestCommonAncestor\FindingLowestCommonAncestor\obj\Debug\FindingLowestCommonAncestor.pdb

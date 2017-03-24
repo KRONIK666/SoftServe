@@ -1,6 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\bin\Debug\BinaryShifting.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\bin\Debug\BinaryShifting.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\bin\Debug\BinaryShifting.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\obj\Debug\BinaryShifting.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\obj\Debug\BinaryShifting.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\BinaryShifting\obj\Debug\BinaryShifting.csprojResolveAssemblyReference.cache

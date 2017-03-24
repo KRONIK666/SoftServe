@@ -1,5 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\ShiftExample\bin\Debug\ShiftExample.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\ShiftExample\bin\Debug\ShiftExample.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\ShiftExample\bin\Debug\ShiftExample.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\ShiftExample\obj\Debug\ShiftExample.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\ShiftExample\obj\Debug\ShiftExample.pdb

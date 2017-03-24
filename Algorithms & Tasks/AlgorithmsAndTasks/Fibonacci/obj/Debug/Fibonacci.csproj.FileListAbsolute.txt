@@ -1,5 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Fibonacci\bin\Debug\Fibonacci.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Fibonacci\bin\Debug\Fibonacci.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Fibonacci\bin\Debug\Fibonacci.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Fibonacci\obj\Debug\Fibonacci.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Fibonacci\obj\Debug\Fibonacci.pdb

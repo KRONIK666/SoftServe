@@ -1,6 +1,0 @@
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\bin\Debug\Algorithm2.exe.config
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\bin\Debug\Algorithm2.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\bin\Debug\Algorithm2.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\obj\Debug\Algorithm2.exe
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\obj\Debug\Algorithm2.pdb
-E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Algorithm2\obj\Debug\Algorithm2.csprojResolveAssemblyReference.cache
