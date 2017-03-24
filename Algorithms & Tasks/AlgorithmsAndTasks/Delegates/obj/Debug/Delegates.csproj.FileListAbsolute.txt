@@ -1,0 +1,6 @@
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\bin\Debug\Delegates.exe.config
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\obj\Debug\Delegates.csprojResolveAssemblyReference.cache
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\bin\Debug\Delegates.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\bin\Debug\Delegates.pdb
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\obj\Debug\Delegates.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\Delegates\obj\Debug\Delegates.pdb

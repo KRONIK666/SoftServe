@@ -1,0 +1,5 @@
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\Serialization\PersonSerialization\bin\Debug\PersonSerialization.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\Serialization\PersonSerialization\bin\Debug\PersonSerialization.pdb
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\Serialization\PersonSerialization\obj\Debug\PersonSerialization.csprojResolveAssemblyReference.cache
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\Serialization\PersonSerialization\obj\Debug\PersonSerialization.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\Serialization\PersonSerialization\obj\Debug\PersonSerialization.pdb

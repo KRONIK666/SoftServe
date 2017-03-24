@@ -1,0 +1,16 @@
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\StartupBusinessSystem.Data.dll.config
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\StartupBusinessSystem.Data.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\StartupBusinessSystem.Data.pdb
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\EntityFramework.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\StartupBusinessSystem.Models.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\StartupBusinessSystem.Models.pdb
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\EntityFramework.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\obj\Debug\StartupBusinessSystem.Data.csprojResolveAssemblyReference.cache
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\obj\Debug\StartupBusinessSystem.Data.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Data\obj\Debug\StartupBusinessSystem.Data.pdb

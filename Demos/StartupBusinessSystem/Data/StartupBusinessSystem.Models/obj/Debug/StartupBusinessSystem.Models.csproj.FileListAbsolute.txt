@@ -1,0 +1,14 @@
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\StartupBusinessSystem.Models.dll.config
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\StartupBusinessSystem.Models.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\StartupBusinessSystem.Models.pdb
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\EntityFramework.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\EntityFramework.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\obj\Debug\StartupBusinessSystem.Models.csprojResolveAssemblyReference.cache
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\obj\Debug\StartupBusinessSystem.Models.dll
+E:\SOFT INTELLECT\SoftServe\Demos\StartupBusinessSystem\Data\StartupBusinessSystem.Models\obj\Debug\StartupBusinessSystem.Models.pdb

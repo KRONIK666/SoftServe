@@ -1,0 +1,6 @@
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\bin\Debug\SwitchAlgorithm.exe.config
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\bin\Debug\SwitchAlgorithm.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\bin\Debug\SwitchAlgorithm.pdb
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\obj\Debug\SwitchAlgorithm.csprojResolveAssemblyReference.cache
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\obj\Debug\SwitchAlgorithm.exe
+E:\SOFT INTELLECT\SoftServe\Algorithms & Tasks\AlgorithmsAndTasks\SwitchAlgorithm\obj\Debug\SwitchAlgorithm.pdb
