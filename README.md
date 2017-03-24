@@ -1,2 +1,0 @@
-# SoftServe
-SoftServe Academy Projects
