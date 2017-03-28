@@ -4,13 +4,11 @@
     using System.Linq;
     using System.Net;
     using System.Web.Mvc;
-
     using Microsoft.AspNet.Identity;
-
     using StartupBusinessSystem.Data.Repositories;
     using StartupBusinessSystem.Models;
     using StartupBusinessSystem.Web.ViewModels.Campaigns;
-    using ViewModels.Participations;
+    using StartupBusinessSystem.Web.ViewModels.Participations;
 
     [Authorize]
     public class CampaignsController : Controller
@@ -19,7 +17,8 @@
         private IRepository<Participation> participations;
         private IRepository<User> users;
 
-        public CampaignsController(IRepository<Campaign> campaigns, IRepository<User> users, IRepository<Participation> participations)
+        public CampaignsController(IRepository<Campaign> campaigns, IRepository<User> users,
+            IRepository<Participation> participations)
         {
             this.campaigns = campaigns;
             this.participations = participations;
@@ -113,7 +112,7 @@
 
             if (campaign == null)
             {
-                return HttpNotFound();
+                return this.HttpNotFound();
             }
 
             var campaignsViewModel = new DetailsCampaignViewModel
@@ -137,6 +136,30 @@
             };
 
             return this.View(campaignsViewModel);
+        }
+
+        [HttpGet]
+        public ActionResult CompanyProfile()
+        {
+            var userId = this.User.Identity.GetUserId();
+            var user = this.users.GetById(userId);
+
+            if (user == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            var companyProfileViewModel = new RequestProfileViewModel
+            {
+                CompanyName = user.UserName,
+                CompanyIDNumber = user.CompanyIdentityNumber,
+                CompanyDescription = user.Description,
+                CompanyAddress = user.Address,
+                CompanyEmail = user.Email,
+                CompanyPhone = user.PhoneNumber
+            };
+
+            return this.View(companyProfileViewModel);
         }
 
         [HttpGet]
@@ -220,6 +243,11 @@
 
                 campaign.CurrentShares -= model.SharesGivenToUser;
 
+                if (campaign.CurrentShares < 0)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
                 if (campaign.CurrentShares == 0)
                 {
                     campaign.Status = CampaignStatus.Finished;
@@ -238,6 +266,5 @@
 
             return this.RedirectToAction("Manage", new { id = id });
         }
-
     }
 }
