@@ -191,13 +191,14 @@
                     MakeOffer = p.MakeOffer,
                     CompanyName = p.User.UserName,
                     OfferedShares = p.MakeOffer,
-                    ParticipationCreator = p.User
+                    ParticipationCreatorId = p.User.Id
                 })
                 .ToList();
 
             var campaignsManageViewModel = new ManageCampaignViewModel
             {
                 AllPendingParticipations = campaignParticipations,
+                isAccepted = true
             };
 
             return this.View(campaignsManageViewModel);
