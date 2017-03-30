@@ -35,7 +35,7 @@
             var companyProfileViewModel = new CompanyProfileViewModel
             {
                 CompanyName = user.UserName,
-                CompanyIDNumber = user.CompanyIdentityNumber,
+                CompanyIdNumber = user.CompanyIdentityNumber,
                 CompanyDescription = user.Description,
                 CompanyAddress = user.Address,
                 CompanyEmail = user.Email,
@@ -86,40 +86,6 @@
         }
 
         [HttpGet]
-        public ActionResult MyParticipations(int page = 1, int size = 5)
-        {
-            var currentUserId = this.User.Identity.GetUserId();
-            var currentUser = this.users.GetById(currentUserId);
-
-            var participationsCount = currentUser.Participations.Count;
-            var allPagesCount = (int)Math.Ceiling(participationsCount / (decimal)size);
-
-            var userParticipations = currentUser.Participations
-                .OrderBy(p => p.SharesOwned)
-                .Skip((page - 1) * size)
-                .Take(size)
-                .Select(p => new ParticipationDetailsViewModel
-                {
-                    Campaign = p.Campaign,
-                    User = p.User,
-                    SharesOwned = p.SharesOwned,
-                    MakeOffer = p.OfferedPrice,
-                    Status = p.Status
-                })
-                .ToList();
-
-            var participationsViewModel = new ListParticipationsViewModel
-            {
-                CurrentPage = page,
-                PagesCount = allPagesCount,
-                PageSize = size,
-                ParticipationsList = userParticipations
-            };
-
-            return this.View(participationsViewModel);
-        }
-
-        [HttpGet]
         public ActionResult MyStartups(int page = 1, int size = 5)
         {
             var currentUserId = this.User.Identity.GetUserId();
@@ -131,7 +97,7 @@
 
             var currentUser = this.users.GetById(currentUserId);
 
-            var campaignsCount = currentUser.Campaigns.Count;        
+            var campaignsCount = currentUser.Campaigns.Count;
             var allPagesCount = (int)Math.Ceiling(campaignsCount / (decimal)size);
 
             var userCampaigns = currentUser
@@ -158,6 +124,40 @@
             };
 
             return this.View(campaignsViewModel);
+        }
+
+        [HttpGet]
+        public ActionResult MyParticipations(int page = 1, int size = 5)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+            var currentUser = this.users.GetById(currentUserId);
+
+            var participationsCount = currentUser.Participations.Count;
+            var allPagesCount = (int)Math.Ceiling(participationsCount / (decimal)size);
+
+            var userParticipations = currentUser.Participations
+                .OrderBy(p => p.SharesOwned)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .Select(p => new ParticipationDetailsViewModel
+                {
+                    Campaign = p.Campaign,
+                    User = p.User,
+                    SharesOwned = p.SharesOwned,
+                    OfferedPrice = p.OfferedPrice,
+                    Status = p.Status
+                })
+                .ToList();
+
+            var participationsViewModel = new ListParticipationsViewModel
+            {
+                CurrentPage = page,
+                PagesCount = allPagesCount,
+                PageSize = size,
+                ParticipationsList = userParticipations
+            };
+
+            return this.View(participationsViewModel);
         }
     }
 }

@@ -6,10 +6,10 @@
     {
         public string Name { get; set; }
 
-        [Display(Name = "Your Offer:")]
-        public int MakeOffer { get; set; }
+        [Display(Name = "Your Offer")]
+        public int OfferedPrice { get; set; }
 
-        public int CurrentShares { get; set; }
+        public int AvailableShares { get; set; }
 
         public int TotalShares { get; set; }
 

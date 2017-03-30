@@ -3,25 +3,23 @@
     ViewBag.Title = "Company Profile";
 }
 
+<br />
 <h2>Company Profile</h2>
-
 <br />
 
 <div class="container">
     <div class="row">
         <div class="panel panel-info">
             <header class="panel-heading">
-                <h2 class="panel-title">
-                    Company Information
-                </h2>
+                <h2 class="panel-title">Company Information</h2>
             </header>
             <div class="panel-body info">
                 <p>Name: @Model.CompanyName </p>
-                <p>Identity Number: @Model.CompanyIDNumber</p>
+                <p>Identity Number: @Model.CompanyIdNumber</p>
                 <p>Description: @Model.CompanyDescription</p>
                 <p>Address: @Model.CompanyAddress </p>
                 <p>Phone: @Model.CompanyPhone </p>
-                <p>Email: @Model.CompanyEmail </p>
+                <p>E-mail: @Model.CompanyEmail </p>
             </div>
         </div>
     </div>

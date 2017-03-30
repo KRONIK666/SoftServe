@@ -133,7 +133,7 @@
                 CompanyAddress = campaign.User.Address,
                 CompanyEmail = campaign.User.Email,
                 CompanyPhone = campaign.User.PhoneNumber,
-                CampaignCurrentShares = campaign.AvailableShares,
+                CampaignAvailableShares = campaign.AvailableShares,
                 CampaignTotalShares = campaign.TotalShares,
                 Owner = campaign.User
             };
@@ -154,7 +154,7 @@
             var companyProfileViewModel = new RequestProfileViewModel
             {
                 CompanyName = user.UserName,
-                CompanyIDNumber = user.CompanyIdentityNumber,
+                CompanyIdNumber = user.CompanyIdentityNumber,
                 CompanyDescription = user.Description,
                 CompanyAddress = user.Address,
                 CompanyEmail = user.Email,
@@ -191,7 +191,7 @@
                     Id = p.Id,
                     CreatedOn = p.CreatedOn,
                     Status = p.Status,
-                    MakeOffer = p.OfferedPrice,
+                    OfferedPrice = p.OfferedPrice,
                     CompanyName = p.User.UserName,
                     OfferedShares = p.OfferedPrice,
                     ParticipationCreatorId = p.User.Id
@@ -201,7 +201,7 @@
             var campaignsManageViewModel = new ManageCampaignViewModel
             {
                 AllPendingParticipations = campaignParticipations,
-                isAccepted = true
+                IsAccepted = true
             };
 
             return this.View(campaignsManageViewModel);
@@ -233,7 +233,7 @@
                 return this.HttpNotFound();
             }
 
-            if (model.isAccepted == true)
+            if (model.IsAccepted == true)
             {
                 if (model.SharesGivenToUser > participation.OfferedPrice)
                 {

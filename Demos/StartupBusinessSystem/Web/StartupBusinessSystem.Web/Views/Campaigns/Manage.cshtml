@@ -3,7 +3,19 @@
     ViewBag.Title = "Manage";
 }
 
+<br />
 <h2>Manage</h2>
+<br />
+
+@{
+    if (!Model.AllPendingParticipations.Any())
+    {
+        <div>
+            <h4>You currently don't have any pending requests!</h4>
+            <h4>Check again later.</h4>
+        </div>
+    }
+}
 
 @foreach (var item in Model.AllPendingParticipations)
 {
@@ -11,8 +23,8 @@
         Model.ParticipationId = item.Id;
     }
 
-    <div>Company name: @item.CompanyName</div>
-    <div>Shares offered: @item.OfferedShares</div>
+    <h4>Company name: "@item.CompanyName"</h4>
+    <h4>Shares offered: @item.OfferedShares</h4>
     @Html.ActionLink("View Profile", "CompanyProfile", "Campaigns", new { id = item.ParticipationCreatorId }, null)
 
     using (Html.BeginForm("Manage", "Campaigns", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -36,30 +48,31 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.isAccepted, "Accept", new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.IsAccepted, "Accept", new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.RadioButtonFor(m => m.isAccepted, "true", new { onchange = "makeTextBoxActive(" + item.Id + ")" })
-                @Html.ValidationMessageFor(m => m.isAccepted)
+                @Html.RadioButtonFor(m => m.IsAccepted, "true", new { onchange = "makeTextBoxActive(" + item.Id + ")" })
+                @Html.ValidationMessageFor(m => m.IsAccepted)
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.isAccepted, "Refuse", new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.IsAccepted, "Refuse", new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.RadioButtonFor(m => m.isAccepted, "false", new { onchange = "makeTextBoxInactive(" + item.Id + ")" })
-                @Html.ValidationMessageFor(m => m.isAccepted)
+                @Html.RadioButtonFor(m => m.IsAccepted, "false", new { onchange = "makeTextBoxInactive(" + item.Id + ")" })
+                @Html.ValidationMessageFor(m => m.IsAccepted)
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" id="submit-button-@item.Id" class="btn btn-default" value="Submit" />
+                <input type="submit" id="submit-button-@item.Id" class="btn btn-info" value="Submit" />
             </div>
         </div>
     }
 }
+<br />
+<br />
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
     <script>
         function makeButtonInactive(maxPrice, id) {
             let sum = document.getElementById("text-form-" + id).value;
