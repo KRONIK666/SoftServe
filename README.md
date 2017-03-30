@@ -13,5 +13,3 @@ Demo 3: StartupBusinessSystem (Team Project)
 - Web Application where users can manage their own Startup Business and also participate in other Startups by making offers to buy shares of the released budget.
 - Owners of the Startups can manage offer requests by accepting and refusing the offers.
 - Technologies used: ASP .NET MVC 5, Entity Framework and SQL Server.
-
-*This program is still in production. All functionality is set, the front-end part needs to be completed.
