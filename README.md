@@ -10,6 +10,6 @@ Demo 2: HRManagementSystem
 - Technologies used: ASP .NET MVC 5, Entity Framework and SQL Server.
 
 Demo 3: StartupBusinessSystem (Team Project)
-- Web Application where users can manage their own Startup Business and also participate in other Startups by making offers to buy shares of the released budget.
+- Web Application where users can provide the financing and manage their own Startup Business and also participate in other Startups by making offers to buy shares from the released budget. In return the buyer receives the corresponding amount of shares from the Startup.
 - Owners of the Startups can manage offer requests by accepting and refusing the offers.
 - Technologies used: ASP .NET MVC 5, Entity Framework and SQL Server.
