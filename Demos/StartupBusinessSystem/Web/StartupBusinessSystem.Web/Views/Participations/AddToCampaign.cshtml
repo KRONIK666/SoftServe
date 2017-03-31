@@ -1,7 +1,4 @@
 ﻿@model StartupBusinessSystem.Web.ViewModels.Participations.CreateParticipationViewModel
-@{
-    ViewBag.Title = "Participate To Campaign";
-}
 
 <br />
 <h2 class="text-center">Startup: "@Model.Name"</h2>
@@ -36,7 +33,7 @@
                     <div class="form-group">
                         @Html.LabelFor(m => m.OfferedPrice, "Your Offer:", new { @class = "col-md-2 control-label" })
                         <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.OfferedPrice, new { oninput = "calculate(" + Model.PricePerShare + ", " + Model.AvailableShares + ")", id = "first", @class = "form-control" })
+                            @Html.TextBoxFor(m => m.OfferedPrice, new { Value = "", oninput = "calculate(" + Model.PricePerShare + ", " + Model.AvailableShares + ")", id = "first", @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.OfferedPrice)
                         </div>
                     </div>
